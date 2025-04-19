@@ -1,0 +1,1458 @@
+
+<!-- saved from url=(0160)https://zip.softgateon.net/?m=UnZip_Viewer&state=%7B%22ids%22:%5B%221OafVXzmBygL9k3C1BNW4sXbJeJIIMhrV%22%5D,%22action%22:%22open%22,%22resourceKeys%22:%7B%7D%7D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./UnZip &amp; Viewer Online_files/css" rel="stylesheet">
+			
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>UnZip &amp; Viewer Online</title>
+
+<meta name="description" content="Extract zip files with ease! It helps you to extract zip files (like WinZip) and view the files easily. Zip, UnZip Online reads files without uploading the file to any servers. It only works locally without going through the server.">
+<meta name="keywords" content="zip, unzip, online zip, online unzip, html5 zip, html5 unzip, zip extractor, online winzip">
+
+<meta property="og:title" content="UnZip &amp; Viewer Online"> 
+<meta property="og:description" content="Extract zip files with ease! It helps you to extract zip files (like WinZip) and view the files easily. Zip, UnZip Online reads files without uploading the file to any servers. It only works locally without going through the server.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="//zip.softgateon.net/">
+<meta property="og:image" content="//zip.softgateon.net/img/logo128.png">
+
+<link rel="shortcut icon" href="https://zip.softgateon.net/favicon.ico">
+
+<style>
+body,table,td {
+	font-size:14px;
+    font-family: Arial, Helvetica, sans-serif; /*Trebuchet MS, Tahoma, Verdana*/
+}
+body{
+	/*background: #D5D7D6;*/
+	background: #e3e3e3;
+	/*background-image:url('images/Texture0109.jpg');
+	background-size:auto;*/
+}
+A:link    {color:#0000ff;text-decoration:none;}
+A:visited {color:#0000ff;text-decoration:none;}
+A:active  {color:#0000ff;text-decoration:underline;}
+A:hover  {color:#0000ff;text-decoration:underline;}
+
+.menulink{
+	font-size:16px;
+}
+
+.defaultwidth {
+	width:100%;
+}
+.titleheader1{
+	font-size:15px;
+	/*font-weight:bold;*/
+	color:green;
+}
+.newsmenu{
+	font-size:16px;
+}
+a.newsmenu:link{text-decoration:underline;}
+a.newsmenu:visited{text-decoration:underline;}
+a.newsmenu:active{text-decoration:underline;}
+a.newsmenu:hover{text-decoration:underline;}
+
+.inputtext{
+	font-size:15px;
+}
+/*button{
+	margin:5px 0px 20px 0px;
+	padding:5px;
+}*/
+.uiButton {
+cursor: pointer;
+display: inline-block;
+color:#FAFAFA;
+}
+.uiButtonConfirm:hover {
+color: #4F9160;
+background-color: white;
+}
+.uiButtonConfirm {
+background-color: #4F9160;
+border-color: #5BA56B;
+}
+</style>
+
+<script src="./UnZip &amp; Viewer Online_files/f.txt"></script><script src="./UnZip &amp; Viewer Online_files/cb=gapi.loaded_1" async=""></script><script src="./UnZip &amp; Viewer Online_files/cb=gapi.loaded_0" async=""></script><script src="./UnZip &amp; Viewer Online_files/jquery.min.js.download"></script>
+<script src="./UnZip &amp; Viewer Online_files/common.js.download" type="text/javascript"></script>
+
+<script>
+var gadb=false;
+var henc=html_entity_encode;
+function setstorage(name,value){
+	if (window.localStorage){
+		localStorage[name]=value+'';
+	}else{
+		//setCookie(name, value, 1000*60*60*24*365*10); 
+	}
+}
+function getstorage(name){
+	var s;
+	if (window.localStorage){
+		s=localStorage[name];
+	}else{
+		//s=getCookie(name);
+	}
+	return s;
+}
+
+function deinit(){ 
+}
+function init(){
+	setCookie("c_lastmenu","UnZip_Viewer");
+}
+
+function _getfrmdoc(ifrm){
+	return (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
+}
+function get_hfilesize(fileSize){
+	if(!fileSize) return '0';
+	function humanFileSize(bytes){
+		var thresh = 1024;
+		if(bytes < thresh) return bytes + ' B';
+		var units = ['kB','MB','GB','TB','PB','EB','ZB','YB'];
+		var u = -1;
+		do {
+			bytes /= thresh;
+			++u;
+		} while(bytes >= thresh);
+		return bytes.toFixed(1)+' '+units[u];
+	}
+	return humanFileSize(fileSize);
+}					
+function number_format(number, decimals, dec_point, thousands_sep) {
+  number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+  var n = !isFinite(+number) ? 0 : +number,
+    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+    sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+    dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+    s = '',
+    toFixedFix = function (n, prec) {
+      var k = Math.pow(10, prec);
+      return '' + Math.round(n * k) / k;
+    };
+  // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+  if (s[0].length > 3) {
+    s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+  }
+  if ((s[1] || '').length < prec) {
+    s[1] = s[1] || '';
+    s[1] += new Array(prec - s[1].length + 1).join('0');
+  }
+  return s.join(dec);
+}
+
+window.URL=(window.URL || window.webkitURL);
+var issafari=false;
+var ua = navigator.userAgent.toLowerCase(); 
+if(ua.indexOf('safari') != -1 && ua.indexOf('chrome') <0) issafari=true;
+var ismsie=false;
+if(navigator.appName!="Netscape"){
+	if(navigator.userAgent.indexOf("MSIE")>=0) ismsie=true;
+}
+if(navigator.userAgent.match(/Trident\//)) ismsie=true;
+var isedge=false;
+if (navigator.userAgent.indexOf("Edge")>=0){isedge=true;}
+</script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style>.picker-dialog-frame{width:100%;height:100%;border:0;overflow:hidden}.picker-dialog-bg{position:absolute;top:0;left:0;background-color:#fff;z-index:1000}.picker-dialog{position:absolute;top:0;left:0;background-color:#fff;border:1px solid #acacac;width:auto;padding:0;z-index:1001;overflow:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}.picker-dialog-content{height:100%;font-size:0;padding:0}.picker-dialog-buttons,.picker-dialog-title{display:none}</style><script async="" src="./UnZip &amp; Viewer Online_files/ca-pub-1113541014872557"></script><script async="" src="./UnZip &amp; Viewer Online_files/AGSKWxU4RCCbpSaWBVrDoRU-uLlMW2MQGUHZZqnXRwWkWOGWZgW6E64IdTvJE_bFvExG-kqzAinlkJW3isWcYYzH2Zyku1j-SdiNUaGQjVifFbP83NCAbNHmhTD2NcjNDFb-eI2QciTNlw=="></script><style>@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(//fonts.gstatic.com/s/materialicons/v143/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2)format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2)format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2)format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2)format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2)format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTVOmu1aB.woff2)format('woff2');unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2)format('woff2');unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F336,U+1F378,U+1F37D,U+1F382,U+1F393-1F39F,U+1F3A7-1F3A8,U+1F3AC-1F3AF,U+1F3C2,U+1F3C4-1F3C6,U+1F3CA-1F3CE,U+1F3D4-1F3E0,U+1F3ED,U+1F3F1-1F3F3,U+1F3F5-1F3F7,U+1F408,U+1F415,U+1F41F,U+1F426,U+1F43F,U+1F441-1F442,U+1F444,U+1F446-1F449,U+1F44C-1F44E,U+1F453,U+1F46A,U+1F47D,U+1F4A3,U+1F4B0,U+1F4B3,U+1F4B9,U+1F4BB,U+1F4BF,U+1F4C8-1F4CB,U+1F4D6,U+1F4DA,U+1F4DF,U+1F4E3-1F4E6,U+1F4EA-1F4ED,U+1F4F7,U+1F4F9-1F4FB,U+1F4FD-1F4FE,U+1F503,U+1F507-1F50B,U+1F50D,U+1F512-1F513,U+1F53E-1F54A,U+1F54F-1F5FA,U+1F610,U+1F650-1F67F,U+1F687,U+1F68D,U+1F691,U+1F694,U+1F698,U+1F6AD,U+1F6B2,U+1F6B9-1F6BA,U+1F6BC,U+1F6C6-1F6CF,U+1F6D3-1F6D7,U+1F6E0-1F6EA,U+1F6F0-1F6F3,U+1F6F7-1F6FC,U+1F700-1F7FF,U+1F800-1F80B,U+1F810-1F847,U+1F850-1F859,U+1F860-1F887,U+1F890-1F8AD,U+1F8B0-1F8BB,U+1F8C0-1F8C1,U+1F900-1F90B,U+1F93B,U+1F946,U+1F984,U+1F996,U+1F9E9,U+1FA00-1FA6F,U+1FA70-1FA7C,U+1FA80-1FA89,U+1FA8F-1FAC6,U+1FACE-1FADC,U+1FADF-1FAE9,U+1FAF0-1FAF8,U+1FB00-1FBFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2)format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2)format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2)format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2)format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2)format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2)format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2)format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTVOmu1aB.woff2)format('woff2');unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2)format('woff2');unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F336,U+1F378,U+1F37D,U+1F382,U+1F393-1F39F,U+1F3A7-1F3A8,U+1F3AC-1F3AF,U+1F3C2,U+1F3C4-1F3C6,U+1F3CA-1F3CE,U+1F3D4-1F3E0,U+1F3ED,U+1F3F1-1F3F3,U+1F3F5-1F3F7,U+1F408,U+1F415,U+1F41F,U+1F426,U+1F43F,U+1F441-1F442,U+1F444,U+1F446-1F449,U+1F44C-1F44E,U+1F453,U+1F46A,U+1F47D,U+1F4A3,U+1F4B0,U+1F4B3,U+1F4B9,U+1F4BB,U+1F4BF,U+1F4C8-1F4CB,U+1F4D6,U+1F4DA,U+1F4DF,U+1F4E3-1F4E6,U+1F4EA-1F4ED,U+1F4F7,U+1F4F9-1F4FB,U+1F4FD-1F4FE,U+1F503,U+1F507-1F50B,U+1F50D,U+1F512-1F513,U+1F53E-1F54A,U+1F54F-1F5FA,U+1F610,U+1F650-1F67F,U+1F687,U+1F68D,U+1F691,U+1F694,U+1F698,U+1F6AD,U+1F6B2,U+1F6B9-1F6BA,U+1F6BC,U+1F6C6-1F6CF,U+1F6D3-1F6D7,U+1F6E0-1F6EA,U+1F6F0-1F6F3,U+1F6F7-1F6FC,U+1F700-1F7FF,U+1F800-1F80B,U+1F810-1F847,U+1F850-1F859,U+1F860-1F887,U+1F890-1F8AD,U+1F8B0-1F8BB,U+1F8C0-1F8C1,U+1F900-1F90B,U+1F93B,U+1F946,U+1F984,U+1F996,U+1F9E9,U+1FA00-1FA6F,U+1FA70-1FA7C,U+1FA80-1FA89,U+1FA8F-1FAC6,U+1FACE-1FADC,U+1FADF-1FAE9,U+1FAF0-1FAF8,U+1FB00-1FBFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2)format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2)format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2)format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2)format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2)format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2)format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2)format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTVOmu1aB.woff2)format('woff2');unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2)format('woff2');unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F336,U+1F378,U+1F37D,U+1F382,U+1F393-1F39F,U+1F3A7-1F3A8,U+1F3AC-1F3AF,U+1F3C2,U+1F3C4-1F3C6,U+1F3CA-1F3CE,U+1F3D4-1F3E0,U+1F3ED,U+1F3F1-1F3F3,U+1F3F5-1F3F7,U+1F408,U+1F415,U+1F41F,U+1F426,U+1F43F,U+1F441-1F442,U+1F444,U+1F446-1F449,U+1F44C-1F44E,U+1F453,U+1F46A,U+1F47D,U+1F4A3,U+1F4B0,U+1F4B3,U+1F4B9,U+1F4BB,U+1F4BF,U+1F4C8-1F4CB,U+1F4D6,U+1F4DA,U+1F4DF,U+1F4E3-1F4E6,U+1F4EA-1F4ED,U+1F4F7,U+1F4F9-1F4FB,U+1F4FD-1F4FE,U+1F503,U+1F507-1F50B,U+1F50D,U+1F512-1F513,U+1F53E-1F54A,U+1F54F-1F5FA,U+1F610,U+1F650-1F67F,U+1F687,U+1F68D,U+1F691,U+1F694,U+1F698,U+1F6AD,U+1F6B2,U+1F6B9-1F6BA,U+1F6BC,U+1F6C6-1F6CF,U+1F6D3-1F6D7,U+1F6E0-1F6EA,U+1F6F0-1F6F3,U+1F6F7-1F6FC,U+1F700-1F7FF,U+1F800-1F80B,U+1F810-1F847,U+1F850-1F859,U+1F860-1F887,U+1F890-1F8AD,U+1F8B0-1F8BB,U+1F8C0-1F8C1,U+1F900-1F90B,U+1F93B,U+1F946,U+1F984,U+1F996,U+1F9E9,U+1FA00-1FA6F,U+1FA70-1FA7C,U+1FA80-1FA89,U+1FA8F-1FAC6,U+1FACE-1FADC,U+1FADF-1FAE9,U+1FAF0-1FAF8,U+1FB00-1FBFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2)format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2)format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:block;src:url(//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2)format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2)format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2)format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2)format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2)format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2)format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:block;src:url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style><style>div.fc-consent-root, .fc-consent-root a:link, .fc-consent-root div,.fc-consent-root h1,.fc-consent-root h2,.fc-consent-root a,.fc-consent-root p,.fc-consent-root button,.fc-consent-root i,.fc-consent-root input,.fc-consent-root label,.fc-consent-root span,.fc-consent-root ul,.fc-consent-root li,.fc-consent-root hr,.fc-consent-root img,.fc-consent-root br,.fc-consent-root footer{-webkit-app-region: none; -webkit-appearance: none; -webkit-border-horizontal-spacing: 0; -webkit-border-image: none; -webkit-border-vertical-spacing: 0; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-box-reflect: none; -webkit-font-smoothing: auto; -webkit-highlight: none; -webkit-hyphenate-character: auto; -webkit-line-break: auto; -webkit-line-clamp: none; -webkit-locale: auto; -webkit-margin-after-collapse: collapse; -webkit-margin-before-collapse: collapse; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-mask-box-image-source: none; -webkit-mask-box-image-width: auto; -webkit-mask-box-image: none; -webkit-mask-clip: border-box; -webkit-mask-composite: source-over; -webkit-mask-image: none; -webkit-mask-origin: border-box; -webkit-mask-position: 0% 0%; -webkit-mask-repeat: repeat; -webkit-mask-size: auto; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.4); -webkit-text-combine: none; -webkit-text-decorations-in-effect: none; -webkit-text-emphasis-color: rgb(0, 0, 0); -webkit-text-emphasis-position: over right; -webkit-text-emphasis-style: none; -webkit-text-orientation: vertical-right; -webkit-text-security: none; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0; -webkit-user-drag: auto; -webkit-writing-mode: horizontal-tb; align-content: normal; align-items: normal; align-self: auto; alignment-baseline: auto; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-fill-mode: none; animation-iteration-count: 1; animation-name: none; animation-play-state: running; animation-timing-function: ease; backdrop-filter: none; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgba(0, 0, 0, 0); background-image: none; background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; background-size: auto; baseline-shift: 0; border-bottom-color: rgb(0, 0, 0); border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom-style: none; border-bottom-width: 0; border-collapse: separate; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-left-color: rgb(0, 0, 0); border-left-style: none; border-left-width: 0; border-right-color: rgb(0, 0, 0); border-right-style: none; border-right-width: 0; border-top-color: rgb(0, 0, 0); border-top-left-radius: 0; border-top-right-radius: 0; border-top-style: none; border-top-width: 0; bottom: auto; box-shadow: none; box-sizing: content-box; break-after: auto; break-before: auto; break-inside: auto; buffered-rendering: auto; caption-side: top; caret-color: rgb(0, 0, 0); clear: none; clip-path: none; clip-rule: nonzero; clip: auto; color-interpolation-filters: linearrgb; color-interpolation: srgb; color-rendering: auto; color: rgb(0, 0, 0); column-count: auto; column-gap: normal; column-rule-color: rgb(0, 0, 0); column-rule-style: none; column-rule-width: 0; column-span: none; column-width: auto; content: normal; cursor: auto; cx: 0; cy: 0; d: none; display: inline; dominant-baseline: auto; empty-cells: show; fill-opacity: 1; fill-rule: nonzero; fill: rgb(0; 0; 0); filter: none; flex-basis: auto; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; float: none; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-kerning: auto; font-optical-sizing: auto; font-size: 16px; font-stretch: 100%; font-style: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant: normal; font-weight: 400; grid-auto-columns: auto; grid-auto-flow: row; grid-auto-rows: auto; grid-column-end: auto; grid-column-start: auto; grid-row-end: auto; grid-row-start: auto; grid-template-areas: none; grid-template-columns: none; grid-template-rows: none; height: auto; hyphens: manual; image-rendering: auto; isolation: auto; justify-content: normal; justify-items: normal; justify-self: auto; left: auto; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-break: auto; line-height: normal; list-style-image: none; list-style-position: outside; list-style-type: disc; margin-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; marker-end: none; marker-mid: none; marker-start: none; mask-type: luminance; mask: none; max-height: none; max-width: none; min-height: 0; min-width: 0; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0; offset-path: none; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgb(0, 0, 0); outline-offset: 0; outline-style: none; outline-width: 0; overflow-anchor: auto; overflow-wrap: normal; overflow-x: visible; overflow-y: visible; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; paint-order: normal; perspective-origin: 0 0; perspective: none; pointer-events: auto; position: static; r: 0; resize: none; right: auto; row-gap: normal; rx: auto; ry: auto; scale: none; scroll-behavior: auto; shape-image-threshold: 0; shape-margin: 0; shape-outside: none; shape-rendering: auto; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dasharray: none; stroke-dashoffset: 0; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; stroke: none; tab-size: 8; table-layout: auto; text-align-last: auto; text-align: start; text-anchor: start; text-decoration-color: rgb(0, 0, 0); text-decoration-line: none; text-decoration-skip-ink: auto; text-decoration-style: solid; text-decoration: none solid rgb(0, 0, 0); text-indent: 0; text-overflow: clip; text-rendering: auto; text-shadow: none; text-size-adjust: auto; text-transform: none; text-underline-position: auto; top: auto; touch-action: auto; transform-origin: 0 0; transform-style: flat; transform: none; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; unicode-bidi: normal; user-select: auto; vector-effect: none; vertical-align: baseline; visibility: visible; white-space: normal; widows: 2; width: auto; will-change: auto; word-break: normal; word-spacing: 0; writing-mode: horizontal-tb; x: 0; y: 0; z-index: auto; zoom: 1;}.fc-consent-root div, .fc-consent-root h1, .fc-consent-root h2, .fc-consent-root p, .fc-consent-root button, .fc-consent-root ul, .fc-consent-root li {display: block;}.fc-consent-root a:link, .fc-consent-root a p {cursor: pointer; position: relative;}.fc-consent-root button, .fc-consent-root button div, .fc-consent-root button p, .fc-consent-root .fc-button, .fc-consent-root .fc-button div, .fc-consent-root .fc-button p {cursor: pointer;}.fc-consent-root a:hover {filter: brightness(80%);}.fc-consent-root button:focus p:not(.fc-button-text), .fc-consent-root button:focus, .fc-consent-root .fc-button:focus, .fc-consent-root a:focus, .fc-consent-root .fc-toggle input:focus, .fc-consent-root .fc-dropdown-selection:focus, .fc-consent-root .fc-dropdown-menu-item:focus {box-shadow: 0 0 0 3px #FFFFFF; outline: 2px #174EA6 solid;}@supports selector(:focus-visible) {.fc-consent-root button:focus p:not(.fc-button-text), .fc-consent-root button:focus, .fc-consent-root .fc-button:focus, .fc-consent-root a:focus, .fc-consent-root .fc-toggle input:focus, .fc-consent-root .fc-dropdown-selection:focus, .fc-consent-root .fc-dropdown-menu-item:focus {box-shadow: none; outline: none;}.fc-consent-root button:focus-visible::before, .fc-consent-root a:focus-visible::before, .fc-consent-root input:focus-visible::before, .fc-consent-root .fc-dropdown-selection-container:focus-visible::before, .fc-consent-root .fc-dropdown-menu-item:focus::before {border: 2px solid #174EA6; border-radius: 6px; content: ''; inset: -4px; position: absolute;}.fc-consent-root button:focus-visible::after, .fc-consent-root a:focus-visible::after, .fc-consent-root input:focus-visible::after, .fc-consent-root .fc-dropdown-selection-container:focus-visible::after, .fc-consent-root .fc-dropdown-menu-item:focus::after {border: 2px solid #e8f0fe; border-radius: 8px; content: ''; inset: -6px; position: absolute;}.fc-consent-root button.fc-icon-button:focus-visible::before {inset: -2px;}.fc-consent-root button.fc-icon-button:focus-visible::after {inset: -4px;}.fc-consent-root button.fc-list-item-button:focus-visible::before {left: 2px; width: calc(100% - 8px)}.fc-consent-root button.fc-list-item-button:focus-visible::after {left: 0; width: calc(100% - 4px)}}.fc-consent-root .fc-button, .fc-consent-root .fc-choice-dialog, .fc-consent-root .fc-faq-item, .fc-consent-root .fc-data-preferences-dialog, .fc-consent-root .fc-dialog-header-back-button, .fc-consent-root .fc-navigation-button, .fc-consent-root .fc-vendor-preferences-dialog, .fc-consent-root .fc-preference-slider, .fc-consent-root .fc-preference-consent, .fc-consent-root .fc-preference-legitimate-interest, .fc-consent-root .fc-slider-el, .fc-consent-root .fc-help-dialog-container, .fc-consent-root .fc-help-dialog-close-button {outline: 1px solid transparent;}div.fc-consent-root {position: fixed; z-index: 2147483644;align-items: center; float: top; height: 100%; left: 0; overflow-x: auto; top: 0;align-items: center; display: flex; justify-content: center; width: 100%;}div.fc-consent-root {font-family: Open Sans;direction: ltr;}.fc-consent-root, .fc-consent-root h1, .fc-consent-root h2, .fc-consent-root p, .fc-consent-root span, .fc-consent-root li {-moz-font-feature-settings: "kern" 1; -moz-osx-font-smoothing: grayscale; -webkit-font-feature-settings: "kern" 1; -webkit-font-smoothing: antialiased; font-feature-settings: "kern" 1; font-kerning: normal; text-rendering: optimizelegibility;}.fc-consent-root .fc-dialog-overlay, .fc-consent-root .fc-help-dialog-overlay {background-color: black; height: 100%; left: 0; opacity: 0.6; position: fixed; top: 0; width: 100%; z-index: -1;}.fc-consent-root .fc-header {display: flex; flex-direction: column; justify-content: center; width: 100%;}.fc-consent-root .fc-header-text {line-height: 1.5em;overflow-wrap: break-word;font-weight: 500;font-style: normal;text-decoration: initial;text-align: center;font-family: 'Open Sans';color: #5F6368;font-size: 1em;}.fc-consent-root .fc-header-image-container {display: flex; flex-direction: row;justify-content: center;margin: 0 auto; -ms-flex-align: center}.fc-consent-root .fc-header-image {max-height: 60px; min-height: 40px; object-fit: contain;}.fc-consent-root .fc-dialog-container {display: flex;}.fc-consent-root .fc-dialog-container {max-width: 512px; width: 90%;}.fc-consent-root .fc-dialog {max-height: 80vh;background-color: #FFFFFF;border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);display: flex; flex-direction: column; width: 100%;}.fc-consent-root .fc-dialog-content {flex: 1 1 auto; overflow-y: auto;}@supports (scrollbar-gutter: stable both-edges) {.fc-consent-root .fc-dialog-content {scrollbar-gutter: stable both-edges;}}.fc-consent-root .fc-dialog-scrollable-content {display: flex; flex-direction: column; justify-content: center; width: 100%;}.fc-consent-root .fc-dialog-restricted-content {align-self: center; flex: 1 1 auto;max-width: 416px;width: calc(100% - 48px);}.fc-consent-root .fc-dialog-header {background-color: #FFFFFFe6; border-radius: 8px 8px 0 0; flex: 0 0 auto; position: relative; width: 100%; z-index: 1;}.fc-consent-root .fc-choice-dialog-header {background-color: #FFFFFFe6; border-radius: 8px 8px 0 0; flex: 0 0 auto; height: 24px; position: relative; width: 100%; z-index: 1;}.fc-consent-root .fc-dialog-header .fc-dialog-header-back-button {border: 0; left: 0; margin: 7px 0 0 4px; padding: 1px 6px; position: absolute; top: 0;}.fc-consent-root .fc-dialog-header .fc-dialog-header-back-button svg {cursor: pointer; fill: #5F6368;}.fc-consent-root .fc-data-preferences-header, .fc-consent-root .fc-vendor-preferences-header {margin: auto; max-width: calc(100% - 80px);}.fc-consent-root .fc-dialog-header p {color: #5F6368; font-size: 12px; font-weight: bold; margin: 12px 0; text-align: center;}.fc-consent-root .fc-site-macro-placeholder-image {border: 1px solid #DADCE0; border-radius: 4px; box-sizing: border-box; padding: 12px 100px;}.fc-consent-root .fc-ump-sdk-app-icon-placeholder-image {border: 1px solid #DADCE0; border-radius: 4px; box-sizing: border-box; padding: 8px;}.fc-consent-root .fc-iris-logo-image {height: 64px; width: 64px;}.fc-consent-root .fc-header-image {max-height: 64px;}.fc-consent-root .fc-header-image-container {max-height: 64px;padding-bottom: 4px;max-width: 100%; min-height: 40px;display: flex; flex-direction: row;justify-content: center;}.fc-consent-root .fc-dialog .fc-header h1.fc-dialog-headline {overflow-wrap: break-word;font-weight: 700;font-style: normal;text-decoration: initial;text-align: center;font-family: 'Open Sans';color: #000000;font-size: 1.25em;}.fc-consent-root .fc-dialog .fc-header h1 {overflow-wrap: break-word;font-weight: 700;font-style: normal;text-decoration: initial;text-align: center;font-family: 'Open Sans';color: #000000;}.fc-consent-root .fc-choice-dialog .fc-header h2:focus, .fc-consent-root .fc-data-preferences-dialog .fc-dialog-header p:focus, .fc-consent-root .fc-vendor-preferences-dialog .fc-dialog-header p:focus {outline: none;}@media screen and (max-width: 479px) {.fc-consent-root .fc-dialog .fc-header h1 {font-size: 16px;}.fc-consent-root .fc-choice-dialog .fc-header-image {max-height: 40px;}}@media screen and (min-width: 480px) {.fc-consent-root .fc-dialog .fc-header h1 {font-size: 18px;}}.fc-consent-root .fc-dialog .fc-header h1, .fc-consent-root .fc-dialog .fc-header h2, .fc-consent-root .fc-dialog .fc-header .fc-header-image-container, .fc-consent-root .fc-dialog .fc-header .fc-header-text {margin: 12px 0;}.fc-consent-root .fc-dialog div.fc-header {font-size: 14px;}.fc-consent-root .fc-dialog .fc-header h2.fc-dialog-title {overflow-wrap: break-word;font-weight: 700;font-style: normal;text-decoration: initial;text-align: center;font-family: 'Open Sans';color: #5F6368;font-size: 1em;}.fc-consent-root .fc-dialog .fc-header h2, .fc-consent-root .fc-dialog .fc-header .fc-header-image-container, .fc-consent-root .fc-dialog .fc-header .fc-header-text {overflow-wrap: break-word;font-weight: 700;font-style: normal;text-decoration: initial;text-align: center;font-family: 'Open Sans';color: #5F6368;margin-top: 24px;line-height: normal; margin-bottom: 0;}.fc-consent-root .fc-dialog .fc-footer p {color: #5F6368; font-size: 12px; line-height: 16px; margin: 12px 0; text-align: left;}.fc-consent-root .fc-dialog .fc-footer a, .fc-consent-root .fc-dialog .fc-footer a:visited {color: #1967D2; cursor: pointer; font: inherit; text-decoration: none;}@media screen and (max-width: 479px) {.fc-consent-root .fc-data-preferences-dialog .fc-body, .fc-consent-root .fc-vendor-preferences-dialog .fc-body {font-size: 14px;}.fc-consent-root .fc-data-preferences-dialog .fc-body p, .fc-consent-root .fc-data-preferences-dialog .fc-noneditable-body p, .fc-consent-root .fc-vendor-preferences-dialog .fc-body p {font-size: 14px; line-height: 20px; margin-bottom: 24px;}}@media screen and (min-width: 480px) {.fc-consent-root .fc-data-preferences-dialog .fc-body, .fc-consent-root .fc-vendor-preferences-dialog .fc-body {font-size: 16px;}.fc-consent-root .fc-data-preferences-dialog .fc-body p, .fc-consent-root .fc-data-preferences-dialog .fc-noneditable-body p, .fc-consent-root .fc-vendor-preferences-dialog .fc-body p {font-size: 16px; line-height: 24px; margin-bottom: 24px;}}.fc-consent-root .fc-data-preferences-dialog .fc-body p, .fc-consent-root .fc-data-preferences-dialog .fc-noneditable-body p, .fc-consent-root .fc-vendor-preferences-dialog .fc-body p {overflow-wrap: break-word;font-weight: normal;font-style: normal;text-decoration: initial;text-align: left;font-family: 'Open Sans';color: #5F6368;font-size: 1em;}.fc-consent-root .fc-footer-buttons-container {align-items: center; border-radius: 0 0 8px 8px; bottom: 0; display: flex; flex: 0 0 auto; flex-direction: column; justify-content: center; left: 0; padding: 0 16px 8px 16px; width: calc(100% - 32px); z-index: 1;}.fc-consent-root .fc-footer-buttons-divider {background-color: #DADCE0; height: 1px; margin-bottom: 8px; z-index: 1;}.fc-consent-root .fc-choice-dialog .fc-footer-buttons-divider {max-width: 416px;width: calc(100% - 48px);}.fc-consent-root .fc-data-preferences-dialog .fc-footer-buttons-divider, .fc-consent-root .fc-vendor-preferences-dialog .fc-footer-buttons-divider {width: calc(100% + 32px);}.fc-consent-root .fc-data-preferences-dialog a, .fc-consent-root .fc-vendor-preferences-dialog a {cursor: pointer;}.fc-consent-root .fc-footer-buttons {display: flex; flex: 1 1 0; justify-content: center;max-width: 416px;width: 100%; z-index: 1;}.fc-consent-root .fc-button {background: rgba(0,0,0,0); border: 0; cursor: pointer; flex: 1; height: 38px; margin: 8px 0; position: relative;}.fc-consent-root .fc-button .fc-button-background {border-radius: 20px; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1;}.fc-consent-root .fc-primary-button .fc-button-background {background-color: #1967D2;}.fc-consent-root .fc-secondary-button .fc-button-background {background-color: #1967D2; border: none;}.fc-consent-root .fc-button-label {overflow-wrap: break-word;font-weight: 700;font-style: normal;text-decoration: initial;text-align: center;font-family: 'Open Sans';color: #FFFFFF;font-size: 1em;letter-spacing: normal; line-height: 20px; margin: 9px 0;}.fc-consent-root .fc-primary-button .fc-button-label {color: #FFFFFF;}.fc-consent-root .fc-secondary-button .fc-button-label {color: #FFFFFF;}.fc-consent-root .fc-manage-options-third-button-label {color: #1967D2; font-size: 14px; font-weight: 600; letter-spacing: normal; line-height: 20px; margin: 9px 0;}.fc-consent-root .fc-button:hover .fc-button-background {filter: brightness(90%);}@media screen and (max-width: 480px) {.fc-consent-root .fc-footer-buttons {align-items: stretch; flex: 1 1 auto; flex-direction: column;}.fc-consent-root .fc-footer-buttons .fc-button {font-size: 14px;}.fc-consent-root .fc-choice-dialog .fc-footer-buttons-container {height: 130px;}.fc-consent-root .fc-footer-buttons-container {height: 130px;}.fc-consent-root .fc-button {flex: 1 1 auto; flex-shrink: 0; height: auto;}.fc-consent-root .fc-primary-button {order: 1;}.fc-consent-root .fc-secondary-button {order: 2;}}@media screen and (min-width: 481px) {.fc-consent-root .fc-footer-buttons {align-items: center; flex-direction: row;}.fc-consent-root .fc-footer-buttons .fc-button {font-size: 14px;}.fc-consent-root .fc-primary-button {margin-left: 12px; order: 2;}.fc-consent-root .fc-choice-dialog .fc-footer-buttons-container {height: 76px;}.fc-consent-root .fc-footer-buttons-container {height: 76px;}.fc-consent-root .fc-secondary-button {margin-right: 12px; order: 1;}}.fc-consent-root .fc-stacks {margin-top: 8px;}.fc-consent-root .fc-stacks ul {list-style-type: none;}.fc-consent-root .fc-stacks ul li {align-items: center; display: flex; flex-direction: row; padding-bottom: 16px;}.fc-consent-root .fc-stacks .fc-stack-name {color: #3C4043; font-size: 12px; font-weight: 600; line-height: 16px; margin-top: 5px; width: calc(100% - 44px);}.fc-consent-root .fc-stacks .fc-stack-icon {align-items: center; background-color: #1967D23D; border-radius: 14px; display: flex; flex-direction: row; height: 28px; justify-content: center; margin-right: 16px; width: 28px;}.fc-consent-root .fc-stacks .fc-stack-icon svg {display: flex; fill: #1967D2;}.fc-consent-root .fc-launch-icon-svg {cursor: pointer; fill: rgb(25, 103, 210); left: 4px; pointer-events: none; position: relative; top: 2px;}.fc-consent-root .fc-faq-header {display: flex; flex-direction: row; position: relative; text-decoration: none;}.fc-consent-root .fc-faq-header:hover {filter: brightness(100%);}.fc-consent-root .fc-faq-header .fc-faq-label {color: #3C4043; cursor: pointer; font-family: Open Sans; font-size: 12px; font-weight: 600; margin-top: 5px;}.fc-consent-root .fc-faq-header .fc-faq-icon {align-items: center; background-color: #FFFFFF; border: 1px solid #DADCE0; border-radius: 14px; display: flex; flex-direction: row; height: 26px; justify-content: center; margin-right: 16px; width: 26px;}.fc-consent-root .fc-faq-header .fc-faq-icon svg {cursor: pointer; display: flex; fill: #5F6368;}.fc-consent-root .fc-faq-contents {background-color: #f8f9fa; display: flex; flex-direction: column; justify-content: center; margin-top: 16px;}.fc-consent-root .fc-faq-contents ul {margin: 14px 0; padding: 0;}.fc-consent-root .fc-faq-contents ul li {display: flex; flex-direction: row; list-style-type: none; padding-bottom: 24px;}.fc-consent-root .fc-faq-contents ul li:last-child {padding-bottom: 0;}.fc-consent-root .fc-faq-contents .fc-faq-item-dot {background-color: #5F6368; border-radius: 4px; height: 8px; margin: 7px 10px 0; width: 8px;}.fc-consent-root .fc-faq-contents .fc-faq-item {color: #5F6368; cursor: pointer; display: flex; flex-direction: row; text-decoration: none; width: calc(100% - 44px);}.fc-consent-root .fc-faq-contents .fc-faq-item-title {color: #5F6368; cursor: pointer; font-size: 14px; margin-left: 16px;}.fc-consent-root .fc-data-preferences-dialog .fc-navigation {display: flex; flex-direction: row; justify-content: center; margin: 0 0 24px;}.fc-consent-root .fc-data-preferences-dialog .fc-navigation-button {background-color: #FFFFFF; border: 0; cursor: pointer; padding: 10px 0; position: relative; text-align: center; width: 100%;}.fc-consent-root .fc-navigation-button .fc-navigation-button-label {color: #1967D2; cursor: pointer; font-size: 14px; font-weight: bold; margin: 0; padding: 0; text-align: center;}.fc-consent-root .fc-navigation-button:hover .fc-navigation-button-label {filter: brightness(80%);}.fc-consent-root .fc-preference-divider {align-items: flex-start; background-color: #F1F3F4; box-sizing: border-box; display: flex; flex-direction: row; margin-bottom: 8px;max-width: 416px;width: calc(100% - 16px); -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}.fc-consent-root .fc-lower-preference-divider {margin-top: 16px;}.fc-consent-root .fc-preference-divider p {color: #5F6368; font-size: 12px; font-weight: bold; margin-bottom: 8px; margin-right: 0; margin-top: 8px; width: fit-content;}.fc-consent-root .fc-preference-divider .fc-help-tip {margin: 8px 16px 0 8px;}@media screen and (max-width: 479px) {.fc-consent-root .fc-preference-divider p {margin-left: 16px;}}@media screen and (min-width: 480px) {.fc-consent-root .fc-preference-divider p {margin-left: 24px;}}.fc-consent-root .fc-preferences-container {align-items: center; align-self: center; display: flex; flex: 1 1 auto; flex-direction: column; margin: 0 0 24px; width: 100%;}.fc-consent-root .fc-preference-container {background-color: #FFFFFF; border: 1px solid #DADCE0; border-radius: 8px; box-sizing: border-box; margin: 0 0 8px;max-width: 416px;width: calc(100% - 16px); -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}.fc-consent-root .fc-preference-container .fc-preference-title {display: flex; flex-direction: row; justify-content: space-between;}.fc-consent-root .fc-preference-container .fc-preference-title h2 {overflow-wrap: break-word;font-weight: 700;font-style: normal;text-decoration: initial;font-family: 'Open Sans';color: #000000;color: #3C4043; font-size: 14px; line-height: 20px; margin: 0 0 8px; padding: 0; text-align: left;}.fc-consent-root .fc-preference-container .fc-preference-title .fc-help-tip {margin-left: 4px; position: relative; top: -4px;}.fc-consent-root .fc-preference-container .fc-preference-description, .fc-consent-root .fc-preference-container .fc-preference-description ul > li {overflow-wrap: break-word;font-weight: normal;font-style: normal;text-decoration: initial;text-align: left;font-family: 'Open Sans';color: #5F6368;line-height: 20px; margin: 0; padding: 0;}.fc-consent-root .fc-preference-container .fc-preference-description a, .fc-consent-root .fc-preference-container .fc-preference-description a:visited {color: #1967D2; font: inherit; text-decoration: none;}.fc-consent-root .fc-preference-container .fc-preference-description ul {margin-left: 24px; margin-top: 10px;}.fc-consent-root .fc-preference-container .fc-preference-description ul > li {display: list-item;}.fc-consent-root .fc-preference-container .fc-preference-slider-container {display: flex; flex-direction: row; justify-content: space-between;}.fc-consent-root .fc-preference-container .fc-preference-slider-label {align-items: center; color: #5F6368; font-weight: bold; flex: 1; flex-direction: row; display: flex; flex-wrap: wrap;}.fc-consent-root .fc-preference-container .fc-preference-slider-label .fc-help-tip {color: inherit; display: inline; font: inherit; vertical-align: middle;}.fc-consent-root .fc-preference-container .fc-purpose-feature-description {color: inherit; font: inherit; margin-bottom: 8px;}.fc-consent-root .fc-preference-container .fc-truncated-3-line {display: -webkit-box; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}.fc-consent-root .fc-preference-container .fc-iab-vendor-storage-info-container, .fc-consent-root .fc-preference-container .fc-iab-vendor-storage-info-container div, .fc-consent-root .fc-preference-container .fc-iab-vendor-storage-info-container p {color: inherit; display: block; font: inherit; text-decoration: none;}.fc-consent-root .fc-preference-container .fc-iab-vendor-storage-info-container .fc-vendor-data-categories {display: flex;}.fc-consent-root .fc-preference-container .fc-iab-vendor-storage-info-container .fc-truncated-single-line {flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}.fc-consent-root .fc-preference-container .fc-preference-container-divider {background-color: #DADCE0; height: 1px; margin-bottom: 16px; margin-top: 12px;}.fc-consent-root .fc-preference-container .fc-consent-preference-container {margin: 16px 0 0;}.fc-consent-root .fc-preference-container .fc-legitimate-interest-preference-container {margin: 24px 0 0;}.fc-consent-root .fc-legitimate-interest-preference-container .fc-help-tip {margin-left: 4px;}@media screen and (max-width: 479px) {.fc-consent-root .fc-preference-container {padding: 16px;}.fc-consent-root .fc-preference-container .fc-preference-description, .fc-consent-root .fc-preference-container .fc-preference-description ul, .fc-consent-root .fc-preference-container .fc-preference-description ul > li {font-size: 12px; line-height: 16px;}.fc-consent-root .fc-preference-container .fc-preference-slider-label {font-size: 12px; line-height: 16px;}.fc-consent-root .fc-preference-container .fc-preference-container-divider {margin-left: -16px; width: calc(100% + 32px);}}@media screen and (min-width: 480px) {.fc-consent-root .fc-preference-container {padding: 24px;}.fc-consent-root .fc-preference-container .fc-preference-description, .fc-consent-root .fc-preference-container .fc-preference-description ul, .fc-consent-root .fc-preference-container .fc-preference-description ul > li {font-size: 14px;}.fc-consent-root .fc-preference-container .fc-preference-slider-label {font-size: 14px; line-height: 20px;}.fc-consent-root .fc-preference-container .fc-preference-container-divider {margin-left: -24px; width: calc(100% + 48px);}}.fc-consent-root .fc-preference-container .fc-preference-slider {display: inline-block; height: 20px; position: relative; width: 39px;}.fc-consent-root .fc-preference-container .fc-preference-slider input {height: 0; opacity: 0; width: 0;}.fc-consent-root .fc-preference-container .fc-preference-slider .fc-slider-el {background-color: #80868b; border-radius: 20px; cursor: pointer; position: absolute; bottom: 0; left: 0; top: 0; right: 0; transition: .4s; -webkit-transition: .4s;}.fc-consent-root .fc-preference-container .fc-preference-slider .fc-slider-el:before {background-color: #FFFFFF; border-radius: 50%; bottom: 1px; content: ""; height: 18px; left: 1px; position: absolute; width: 18px; transition: .4s; -webkit-transition: .4s;}.fc-consent-root .fc-preference-container .fc-preference-slider input:checked + .fc-slider-el {background-color: #1967D2;}.fc-consent-root .fc-preference-container .fc-preference-slider input:focus + .fc-slider-el {box-shadow: 0 -2px 8px rgba(128, 134, 139, 0.09), 0 4px 8px rgba(128, 134, 139, 0.06), 0 1px 2px rgba(60, 64, 67, 0.3), 0 2px 6px rgba(60, 64, 67, 0.15);}.fc-consent-root .fc-preference-container .fc-preference-slider input:checked + .fc-slider-el:before {transform: translateX(19px); -ms-transform: translateX(19px); -webkit-transform: translateX(19px);}.fc-consent-root a:hover {filter: brightness(80%);}.fc-consent-root .fc-help-tip {align-items: center; background: rgba(255, 255, 255, 0); border: 0; cursor: pointer; display: flex; outline: none;}.fc-consent-root .fc-help-tip .fc-help-tip-icon:focus {cursor: pointer; outline: auto; pointer-events: none;}.fc-consent-root .fc-help-tip .fc-help-tip-icon {cursor: pointer; display: flex; fill: #5F6368; pointer-events: none;}.fc-consent-root .fc-help-dialog-container {align-items: center; display: flex; justify-content: center; float: top; height: 100%; left: 0; overflow-x: auto; position: absolute; top: 0; width: 100%; z-index: 1;}@media screen and (max-width: 479px) {.fc-consent-root .fc-help-dialog {margin: 32px;}}.fc-consent-root .fc-help-dialog {background-color: #FFFFFF; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; max-height: calc(80vh - 32px);max-width: 416px;position: relative; width: 90%;}.fc-consent-root .fc-help-dialog h1 {color: #202124; font-size: 14px; font-weight: bold; line-height: 20px; margin: 24px 24px 0; min-height: max-content;}.fc-consent-root .fc-help-dialog h1:focus {outline: none;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents {margin: 8px 24px; overflow-y: auto; padding-bottom: 62px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents div, .fc-consent-root .fc-help-dialog .fc-help-dialog-contents li, .fc-consent-root .fc-help-dialog .fc-help-dialog-contents p {color: #5F6368; font-size: 14px; line-height: 20px; margin-bottom: 8px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-illustrations ul {margin-left: 20px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-illustrations li {list-style-position: outside; list-style-type: decimal;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-purpose-feature-details > * {padding-top: 16px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-purpose-feature-section-title {font-weight: bold;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-legitimate-interest-claim-link {margin-left: 20px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-device-storage-disclosures p {margin-bottom: 0;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-device-storage-disclosures {margin-bottom: 24px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-device-storage-disclosures p, .fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-device-storage-disclosures li {margin-bottom: 8px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents .fc-vendor-device-storage-disclosures li {list-style-position: outside; margin-left: 20px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents a {color: #1967D2; cursor: pointer; font-size: 14px; line-height: 20px; margin-bottom: 8px;}.fc-consent-root .fc-help-dialog .fc-help-dialog-contents li {display: list-item; list-style-position: inside; list-style-type: disc;}.fc-consent-root .fc-help-dialog .fc-help-dialog-button-container {background-color: #FFFFFFe6; bottom: 0; border-radius: 0 0 8px 8px; display: flex; flex: 1 1 auto; justify-content: center; left: 0; position: absolute; width: 100%;}.fc-consent-root .fc-help-dialog .fc-help-dialog-close-button {background-color: #FFFFFF00; border: 0; border-radius: 20px; cursor: pointer; flex: 1 1 auto; margin: 8px 12px; opacity: 1; outline: none;}.fc-consent-root .fc-help-dialog-close-button .fc-help-dialog-close-button-label {color: #1967D2; font-size: 14px; font-style: normal; font-weight: bold; line-height: 20px; padding: 6px 0; text-align: center;}.fc-consent-root .fc-help-dialog-close-button:focus .fc-help-dialog-close-button-label {cursor: pointer; outline: auto;}.fc-consent-root i.material-icons {font-family: 'Material Icons';}</style><script async="" src="./UnZip &amp; Viewer Online_files/AGSKWxXZfvt6ACPcIQJGwgBqY7AumWYelFCCehtTW6pCzVwXjgJLyrFPo-MTrDcCw4rsWzH42y7Y_Ngg_7RG-1WgrGjP1FcLG9ZW1NOIw-MipiG2zXQwqkjCKiJs_hCWLNAxPgzJnOodCQ=="></script><link type="text/css" href="./UnZip &amp; Viewer Online_files/css(1)" rel="stylesheet"><link type="text/css" href="./UnZip &amp; Viewer Online_files/css(2)" rel="stylesheet"></head>
+
+<body onload="" onunload="deinit()" style="">
+
+<style>
+.gd_div{background-color:#FFFFE1;position:absolute;overflow:hidden;-webkit-box-shadow: 0 0 25px #999;-moz-box-shadow: 0 0 25px #999;box-shadow: 0 0 25px #999;}
+</style>
+<div id="layer_message" class="gd_div" style="z-index: 10001; left: 10px; top: 10px; border: 1px solid rgb(0, 0, 0); padding: 5px; display: none;"><label>Login failed!!</label></div>
+
+<table align="center">
+<tbody><tr><td height="1">
+</td></tr><tr><td>
+	<center>
+	<a id="toptitle" href="https://zip.softgateon.net/" title="Go Home" style="color:green"><span style="font-size:28px;font-family:Verdana, Arial;font-weight:bold">UnZip &amp; Viewer Online</span></a>
+	</center>
+</td></tr><tr><td height="9">
+</td></tr></tbody></table>
+
+<table id="maintable" align="center" border="0" style="background: white; padding: 5px; border: 0px solid silver; box-shadow: rgb(153, 153, 153) 0px 0px 10px; height: auto !important;">
+
+<tbody><tr><td align="center">
+<a class="newsmenu" style="" href="https://zip.softgateon.net/?m=Zip_Online">Zip Online</a>&nbsp;&nbsp;&nbsp;<a class="newsmenu" style="font-weight:bold" href="https://zip.softgateon.net/?m=UnZip_Viewer">UnZip &amp; Viewer Online</a>&nbsp;&nbsp;&nbsp;<a class="newsmenu" href="https://waview.newappzone.com/" title="Fast, offline image viewer built with WebAssembly technology.">waView</a>
+
+</td></tr><tr><td align="center">
+<script async="" src="./UnZip &amp; Viewer Online_files/f(1).txt" onerror="gadb=true;"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-1113541014872557" data-ad-slot="5774213902" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 90px; width: 970px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:970px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="970" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./UnZip &amp; Viewer Online_files/ads.html" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<style>
+.info{
+	color:green;
+}
+.info2{
+	color:#08298A;
+}
+.error{
+	color:red;
+}
+.download{font-size:19px;}
+.download2{font-size:17px;}
+.btn{font-size:19px;}
+</style>
+
+</td></tr><tr><td>
+<style>
+#holder { border: 5px dashed #ccc; width: 680px; height: 50px; margin: 0px auto;}
+#holder.hover { border: 5px dashed #333; }
+</style>
+<script src="./UnZip &amp; Viewer Online_files/jsziptools.js.download"></script>
+
+</td></tr><tr><td>
+<div id="holder" class=""><table width="100%" height="100%"><tbody><tr><td align="center" valign="middle"><font style="font-size:19px;">Drop a zip file here.</font></td></tr></tbody></table></div>
+
+<table align="center"><tbody><tr>
+<td>Encoding: <span id="charset1"><select id="filecharset1"><optgroup label="Arabic"><option value="IBM-864">IBM-864</option><option value="IBM-864-I">IBM-864-I</option><option value="ISO-8859-6">ISO-8859-6</option><option value="ISO-8859-6-E">ISO-8859-6-E</option><option value="ISO-8859-6-I">ISO-8859-6-I</option><option value="MacArabic">MacArabic</option><option value="Windows-1256">Windows-1256</option></optgroup><optgroup label="Armenian"><option value="ARMSCII-8">ARMSCII-8</option></optgroup><optgroup label="Baltic"><option value="ISO-8859-13">ISO-8859-13</option><option value="ISO-8859-4">ISO-8859-4</option><option value="Windows-1257">Windows-1257</option></optgroup><optgroup label="Celtic"><option value="ISO-8859-14">ISO-8859-14</option></optgroup><optgroup label="Central European"><option value="IBM-852">IBM-852</option><option value="ISO-8859-2">ISO-8859-2</option><option value="MacCE">MacCE</option><option value="Windows-1250">Windows-1250</option></optgroup><optgroup label="Chinese Simplified"><option value="GB18030">GB18030</option><option value="GB2312">GB2312</option><option value="GBK">GBK</option><option value="HZ">HZ</option><option value="ISO-2022-CN">ISO-2022-CN</option></optgroup><optgroup label="Chinese Traditional"><option value="Big5">Big5</option><option value="Big5-HKSCS">Big5-HKSCS</option><option value="EUC-TW">EUC-TW</option></optgroup><optgroup label="Croatian"><option value="MacCroatian">MacCroatian</option></optgroup><optgroup label="Cyrillic"><option value="IBM-855">IBM-855</option><option value="ISO-8859-5">ISO-8859-5</option><option value="ISO-IR-111">ISO-IR-111</option><option value="KOI8-R">KOI8-R</option><option value="MacCyrillic">MacCyrillic</option><option value="Windows-1251">Windows-1251</option></optgroup><optgroup label="Cyrillic/Russian"><option value="CP-866">CP-866</option></optgroup><optgroup label="Cyrillic/Ukrainian"><option value="KOI8-U">KOI8-U</option><option value="MacUkrainian">MacUkrainian</option></optgroup><optgroup label="English"><option value="US-ASCII">US-ASCII</option></optgroup><optgroup label="Farsi"><option value="MacFarsi">MacFarsi</option></optgroup><optgroup label="Georgian"><option value="GEOSTD8">GEOSTD8</option></optgroup><optgroup label="Greek"><option value="ISO-8859-7">ISO-8859-7</option><option value="MacGreek">MacGreek</option><option value="Windows-1253">Windows-1253</option></optgroup><optgroup label="Gujarati"><option value="MacGujarati">MacGujarati</option></optgroup><optgroup label="Gurmukhi"><option value="MacGurmukhi">MacGurmukhi</option></optgroup><optgroup label="Hebrew"><option value="IBM-862">IBM-862</option><option value="ISO-8859-8-E">ISO-8859-8-E</option><option value="ISO-8859-8-I">ISO-8859-8-I</option><option value="MacHebrew">MacHebrew</option><option value="Windows-1255">Windows-1255</option></optgroup><optgroup label="Hebrew Visual"><option value="ISO-8859-8">ISO-8859-8</option></optgroup><optgroup label="Hindi"><option value="MacDevanagari">MacDevanagari</option><option value="SunDevanagari">SunDevanagari</option></optgroup><optgroup label="Icelandic"><option value="MacIcelandic">MacIcelandic</option></optgroup><optgroup label="Japanese"><option value="EUC-JP">EUC-JP</option><option value="ISO-2022-JP">ISO-2022-JP</option><option value="Shift_JIS">Shift_JIS</option></optgroup><optgroup label="Korean"><option value="EUC-KR">EUC-KR</option><option value="ISO-2022-KR">ISO-2022-KR</option><option value="JOHAB">JOHAB</option><option value="UHC">UHC</option></optgroup><optgroup label="Nordic"><option value="ISO-8859-10">ISO-8859-10</option></optgroup><optgroup label="Romanian"><option value="ISO-8859-16">ISO-8859-16</option><option value="MacRomanian">MacRomanian</option></optgroup><optgroup label="South European"><option value="ISO-8859-3">ISO-8859-3</option></optgroup><optgroup label="Thai"><option value="IBM-874">IBM-874</option><option value="ISO-8859-11">ISO-8859-11</option><option value="TIS-620">TIS-620</option><option value="Windows-874">Windows-874</option></optgroup><optgroup label="Turkish"><option value="IBM-857">IBM-857</option><option value="ISO-8859-9">ISO-8859-9</option><option value="MacTurkish">MacTurkish</option><option value="Windows-1254">Windows-1254</option></optgroup><optgroup label="Unicode"><option value="UTF-16">UTF-16</option><option value="UTF-16BE">UTF-16BE</option><option value="UTF-16LE">UTF-16LE</option><option value="UTF-32">UTF-32</option><option value="UTF-32BE">UTF-32BE</option><option value="UTF-32LE">UTF-32LE</option><option value="UTF-7">UTF-7</option><option value="UTF-8">UTF-8</option></optgroup><optgroup label="Vietnamese"><option value="TCVN">TCVN</option><option value="VISCII">VISCII</option><option value="VPS">VPS</option><option value="Windows-1258">Windows-1258</option></optgroup><optgroup label="Western"><option value="IBM-850">IBM-850</option><option value="ISO-8859-1">ISO-8859-1</option><option value="ISO-8859-15">ISO-8859-15</option><option value="MacRoman">MacRoman</option><option value="Windows-1252">Windows-1252</option></optgroup></select></span> <button onclick="proc_default()">Default</button>
+</td><td width="10">
+</td><td><div id="dfile1" style="display:inline"><input type="file" id="fileload1" style="width:238px" name="files[]" accept=".zip,.epub,.kmz,.odt,.odp,.ods,.docx,.xlsx,.pptx,.key,.pages,.numbers,.xps,.oxps,.dwfx,.dotx,.docm,.dotm,.potx,.ppsx,.pptm,.potm,.ppsm,.xltx,.xlsm,.xltm,.ott,.ots,.otp,.apk,.xapk,.vsdx,.jar,.capx,.spv,.zi,.bpm,.ipa,.lqm,.odb,.notebook,.odc"></div> <button id="btn_reloadfile1" title="Builtbybilbo_site.zip">Reload</button>
+<script>document.getElementById("dfile1").innerHTML='<input type="file" id="fileload1" style="width:238px" name="files[]" accept=".zip,.epub,.kmz,.odt,.odp,.ods,.docx,.xlsx,.pptx,.key,.pages,.numbers,.xps,.oxps,.dwfx,.dotx,.docm,.dotm,.potx,.ppsx,.pptm,.potm,.ppsm,.xltx,.xlsm,.xltm,.ott,.ots,.otp,.apk,.xapk,.vsdx,.jar,.capx,.spv,.zi,.bpm,.ipa,.lqm,.odb,.notebook,.odc">';</script>
+</td><td><button type="button" id="btn_open" onclick="gd_open_picker()" title="Select a zip file from Google Drive" style=""><img src="./UnZip &amp; Viewer Online_files/product16.png" width="14" align="absmiddle"> Google Drive</button>
+</td><td><button id="btn_saver" style="display:none">Show Saver</button>
+</td><td><input type="range" id="size_width" min="0" max="100" step="10" value="0" style="width:100px;padding:0px" title="Change the width" onchange="size_width_onchange(this)">
+</td></tr></tbody></table>
+
+<table>
+<tbody><tr>
+<td><div id="filenames-view" style="width:450px;height:550px;overflow-y:scroll"><table><tbody><tr><td><b>Filename</b></td><td><b>Filesize</b></td></tr><tr><td><a href="https://zip.softgateon.net/?m=UnZip_Viewer&amp;state=%7B%22ids%22:%5B%221OafVXzmBygL9k3C1BNW4sXbJeJIIMhrV%22%5D,%22action%22:%22open%22,%22resourceKeys%22:%7B%7D%7D#" onclick="proc_preview(2,this);return false;" style="">Aesthetic_Mass_Monster_Program.pdf</a></td><td>3,606</td></tr><tr><td><a href="https://zip.softgateon.net/?m=UnZip_Viewer&amp;state=%7B%22ids%22:%5B%221OafVXzmBygL9k3C1BNW4sXbJeJIIMhrV%22%5D,%22action%22:%22open%22,%22resourceKeys%22:%7B%7D%7D#" onclick="proc_preview(1,this);return false;" style="">bg.jpg</a></td><td>1,500,552</td></tr><tr><td><a href="https://zip.softgateon.net/?m=UnZip_Viewer&amp;state=%7B%22ids%22:%5B%221OafVXzmBygL9k3C1BNW4sXbJeJIIMhrV%22%5D,%22action%22:%22open%22,%22resourceKeys%22:%7B%7D%7D#" onclick="proc_preview(0,this);return false;" style="color: green;">index.html</a></td><td>3,159</td></tr></tbody></table></div>
+</td><td valign="bottom">
+	<div id="current" style="width:600px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">index.html</div>
+	<div id="msg" style="display: none;"></div>
+	<table cellpadding="0" cellspacing="0"><tbody><tr>
+		<td><a href="blob:https://zip.softgateon.net/d98b5112-a05c-4fc3-9842-defa3f48db89" id="blob" class="download2" style="" download="index.html" target="_blank">Download this file</a> <span id="downsize">(3.1 kB)</span>
+		&nbsp;<a href="https://zip.softgateon.net/?m=UnZip_Viewer&amp;state=%7B%22ids%22:%5B%221OafVXzmBygL9k3C1BNW4sXbJeJIIMhrV%22%5D,%22action%22:%22open%22,%22resourceKeys%22:%7B%7D%7D#" id="savetodrive" style="" title="Save this file to Google Drive">Drive</a>
+		</td><td width="10">
+		</td><td><div id="optionpanel"><button onclick="proc_selall()" id="btn_selall" title="Select all &amp; Press Ctrl+C, Apple+C to copy to clipboard">Select all</button> <label><input id="chk_wrap" type="checkbox">Wrap</label> &nbsp;<a href="blob:https://zip.softgateon.net/b565137b-ccb4-4017-8faa-a4b6869746fd" target="_blank">View in HTML format</a></div>
+	</td></tr></tbody></table>
+	<div id="preview" style="width:600px;height:503px;overflow:hidden;margin-top:3px;"><iframe id="audio5" frameborder="0" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" scrolling="auto" style="width:100%;height:100%" allowfullscreen="true" src="./UnZip &amp; Viewer Online_files/saved_resource.html"></iframe></div>
+</td></tr></tbody></table>
+
+<center>
+<div id="downlink" style="width:700px;white-space:nowrap;overflow:hidden;border:0px solid red;margin-top:2px"></div>
+Extract zip files with ease! It helps you to extract zip files (like WinZip) and view the files easily. Provides web PDF viewer.
+</center>
+
+<script>
+var gfiles,gblob;
+var greader;
+var gwork=false;
+var giserror=false;
+
+function size_width_onchange(f){
+	var a=_getid("preview");
+	var w=600+Math.floor(600*(f.value/100));
+	a.style.width=w+"px";
+	setstorage('size_width',f.value);
+}
+function proc_default(){
+	var a=_getid("filecharset1");
+	if(a) a.value='UTF-8';
+}
+function handleFileSelect(files,blob){
+	if(gadb){alert('Please disable the adblock for free use.');return;}	if(issafari && !(new Blob()).slice){
+		alert("This browser does not support.");
+		return;	
+	}		
+	if(!window.FileReader || !window.URL || !window.XMLHttpRequest){
+		alert("This browser does not support.");
+		return;
+	}
+	/*if(gwork){
+		alert('Working... Please try again after a while.');
+		return;
+	}*/
+	if(files || (!files && !blob)){
+		if(files) gfiles=files;
+		if(!gfiles || gfiles.length==0) return;
+	}else{
+		if(!blob)return;
+	}
+	var btn_reloadfile1=_getid("btn_reloadfile1");
+	btn_reloadfile1.disabled=false;
+
+	_getid("filenames-view").innerHTML='';
+	_getid("current").innerHTML='';
+	_getid("msg").innerHTML='';
+	_getid("preview").innerHTML='';
+	_getid('blob').style.display='none';
+	_getid('savetodrive').style.display='none';
+	_getid('optionpanel').innerHTML='';
+	_getid('downsize').innerHTML='';
+
+	var encoding='UTF-8';
+	var a=_getid("filecharset1");
+	if(a) encoding=a.value;
+	setstorage("c_unzip_charset",encoding);
+	gwork=true;
+	var buffer;
+	if(files || (!files && !blob)){
+		buffer=gfiles[0];	
+		gblob='';
+	}else{
+		buffer=blob;
+	}
+	if(buffer) btn_reloadfile1.title=buffer.name || '';
+	if(!buffer || buffer.size==0){
+		setTimeout(function(){
+			gwork=false;
+			_getid("msg").innerHTML='<font class=error>File size is zero. or File not found.</font><br><br>';
+		},100);
+		return;
+	}
+	maxunzipcount=1200; 
+	giserror=false;
+	jz.zip.unpack({buffer: buffer, encoding: encoding}).then(function(reader){
+		gwork=false;
+		//console.log(reader);
+		greader=reader;		
+		var arr=[];
+		var arr2,path,d;
+		for(var i = 0; i < reader.files.length; i++){    
+			arr2=(reader.files[i].filename || '').split('/');
+			arr2.splice(arr2.length-1,1);
+			path=arr2.join("/");		
+			d={};
+			d.path=path;
+			d.idx=i;
+			d.file=reader.files[i];
+			arr.push(d);
+		}
+		arr.sort(function(a,b){
+			var a1,b1;
+			a1=(a.path || '').toLowerCase();
+			b1=(b.path || '').toLowerCase();
+			if(a1>b1) return 1;
+			else if(a1<b1) return -1;
+			else{
+				a1=(a.file.filename || '').toLowerCase();
+				b1=(b.file.filename || '').toLowerCase();
+				if(a1>b1) return 1;
+				else if(a1<b1) return -1;
+				else return 0;
+			}
+		});
+		var s='<table><tr><td><b>Filename</b><td><b>Filesize</b>';
+		for(var i = 0; i < arr.length; i++){    
+			s+='<tr><td><a href="#" onclick="proc_preview('+arr[i].idx+',this);return false;">'+henc(arr[i].file.filename)+'</a><td>'+number_format(arr[i].file.uncompsize);
+		}
+		if(arr.length==0) s+='<tr><td>No compressed files found.<td>';
+		arr=[];
+		s+='</table>';
+		_getid("filenames-view").innerHTML=s;
+	}).catch(function(err){
+		if(!giserror){
+			_getid("msg").innerHTML='<font class=error>'+henc(shortstring(err+'',150))+'</font><br><br>';
+			_getid('msg').style.display='';
+			//_gerr(err+'');
+		}
+	});
+}
+
+function _gerr(s){
+function fillnumber(s){
+	s=String(s);
+	if ( s.length==1 ) { 
+		return '0'+s;  
+	}
+	return s;
+}	
+	giserror=true;
+	_getid("current").innerHTML='';
+	_getid("preview").innerHTML='';
+	_getid('blob').style.display='none';
+	_getid('savetodrive').style.display='none';
+	_getid('optionpanel').innerHTML='';
+	_getid('downsize').innerHTML='';
+	var t=new Date();
+	s='['+fillnumber(t.getHours())+':'+fillnumber(t.getMinutes())+':'+fillnumber(t.getSeconds())+'] '+s;
+	_getid("msg").innerHTML='<font class=error>'+henc(s)+'</font><br><br>';
+	_getid('msg').style.display='';
+}
+
+function init2(){
+	_getid('fileload1').onchange=function(e){
+		if(!e || !e.target){
+			alert("This browser does not support.");
+			return;
+		}
+		handleFileSelect(e.target.files);
+	}
+	_getid("btn_reloadfile1").onclick=function(){
+		handleFileSelect('',gblob);
+	}
+	var holder = document;
+	var holder2=document.getElementById('holder');
+	holder.ondragover = function (e) { 
+		holder2.className = 'hover'; 
+		try{var ua=navigator.userAgent;
+			if(ua && ua.indexOf("Chrome")>=0){					
+				if(e.originalEvent) e = e.originalEvent;
+				if(e.dataTransfer){
+					var b = e.dataTransfer.effectAllowed;
+					e.dataTransfer.dropEffect = ('move' === b || 'linkMove' === b) ? 'move' : 'copy';
+				}
+			}
+		}catch(err){}
+		return false; 
+	};
+	holder.ondragend = function () { holder2.className = ''; return false; };
+	holder.ondrop = function (e) {
+		holder2.className = '';
+		e.preventDefault();				
+		handleFileSelect(e.dataTransfer.files);
+		return false;
+	};
+
+	var charset='<optgroup label="Arabic"><option value="IBM-864">IBM-864<option value="IBM-864-I">IBM-864-I<option value="ISO-8859-6">ISO-8859-6<option value="ISO-8859-6-E">ISO-8859-6-E<option value="ISO-8859-6-I">ISO-8859-6-I<option value="MacArabic">MacArabic<option value="Windows-1256">Windows-1256<optgroup label="Armenian"><option value="ARMSCII-8">ARMSCII-8<optgroup label="Baltic"><option value="ISO-8859-13">ISO-8859-13<option value="ISO-8859-4">ISO-8859-4<option value="Windows-1257">Windows-1257<optgroup label="Celtic"><option value="ISO-8859-14">ISO-8859-14<optgroup label="Central European"><option value="IBM-852">IBM-852<option value="ISO-8859-2">ISO-8859-2<option value="MacCE">MacCE<option value="Windows-1250">Windows-1250<optgroup label="Chinese Simplified"><option value="GB18030">GB18030<option value="GB2312">GB2312<option value="GBK">GBK<option value="HZ">HZ<option value="ISO-2022-CN">ISO-2022-CN<optgroup label="Chinese Traditional"><option value="Big5">Big5<option value="Big5-HKSCS">Big5-HKSCS<option value="EUC-TW">EUC-TW<optgroup label="Croatian"><option value="MacCroatian">MacCroatian<optgroup label="Cyrillic"><option value="IBM-855">IBM-855<option value="ISO-8859-5">ISO-8859-5<option value="ISO-IR-111">ISO-IR-111<option value="KOI8-R">KOI8-R<option value="MacCyrillic">MacCyrillic<option value="Windows-1251">Windows-1251<optgroup label="Cyrillic/Russian"><option value="CP-866">CP-866<optgroup label="Cyrillic/Ukrainian"><option value="KOI8-U">KOI8-U<option value="MacUkrainian">MacUkrainian<optgroup label="English"><option value="US-ASCII">US-ASCII<optgroup label="Farsi"><option value="MacFarsi">MacFarsi<optgroup label="Georgian"><option value="GEOSTD8">GEOSTD8<optgroup label="Greek"><option value="ISO-8859-7">ISO-8859-7<option value="MacGreek">MacGreek<option value="Windows-1253">Windows-1253<optgroup label="Gujarati"><option value="MacGujarati">MacGujarati<optgroup label="Gurmukhi"><option value="MacGurmukhi">MacGurmukhi<optgroup label="Hebrew"><option value="IBM-862">IBM-862<option value="ISO-8859-8-E">ISO-8859-8-E<option value="ISO-8859-8-I">ISO-8859-8-I<option value="MacHebrew">MacHebrew<option value="Windows-1255">Windows-1255<optgroup label="Hebrew Visual"><option value="ISO-8859-8">ISO-8859-8<optgroup label="Hindi"><option value="MacDevanagari">MacDevanagari<option value="SunDevanagari">SunDevanagari<optgroup label="Icelandic"><option value="MacIcelandic">MacIcelandic<optgroup label="Japanese"><option value="EUC-JP">EUC-JP<option value="ISO-2022-JP">ISO-2022-JP<option value="Shift_JIS">Shift_JIS<optgroup label="Korean"><option value="EUC-KR">EUC-KR<option value="ISO-2022-KR">ISO-2022-KR<option value="JOHAB">JOHAB<option value="UHC">UHC<optgroup label="Nordic"><option value="ISO-8859-10">ISO-8859-10<optgroup label="Romanian"><option value="ISO-8859-16">ISO-8859-16<option value="MacRomanian">MacRomanian<optgroup label="South European"><option value="ISO-8859-3">ISO-8859-3<optgroup label="Thai"><option value="IBM-874">IBM-874<option value="ISO-8859-11">ISO-8859-11<option value="TIS-620">TIS-620<option value="Windows-874">Windows-874<optgroup label="Turkish"><option value="IBM-857">IBM-857<option value="ISO-8859-9">ISO-8859-9<option value="MacTurkish">MacTurkish<option value="Windows-1254">Windows-1254<optgroup label="Unicode"><option value="UTF-16">UTF-16<option value="UTF-16BE">UTF-16BE<option value="UTF-16LE">UTF-16LE<option value="UTF-32">UTF-32<option value="UTF-32BE">UTF-32BE<option value="UTF-32LE">UTF-32LE<option value="UTF-7">UTF-7<option value="UTF-8">UTF-8<optgroup label="Vietnamese"><option value="TCVN">TCVN<option value="VISCII">VISCII<option value="VPS">VPS<option value="Windows-1258">Windows-1258<optgroup label="Western"><option value="IBM-850">IBM-850<option value="ISO-8859-1">ISO-8859-1<option value="ISO-8859-15">ISO-8859-15<option value="MacRoman">MacRoman<option value="Windows-1252">Windows-1252';
+
+	_getid("charset1").innerHTML='<select id="filecharset1">'+charset+'</select>';
+	var s=getstorage("c_unzip_charset");
+	if(!s) s='UTF-8';
+	var a=_getid("filecharset1");
+	if(a) a.value=s;
+
+	var s=getstorage('size_width');
+	if(s){
+		var a=_getid("size_width");
+		a.value=s;
+		size_width_onchange(a);
+	}
+	setstorage("c_zip_pdf",'');
+}
+init2();
+
+/*function proc_framemedia(obj){
+	if(!obj) return;
+	var a=_getid("audio5");
+	if(a){
+		var w=obj.offsetWidth;
+		var h=obj.offsetHeight;
+		if(w && h){
+			a.style.width=(w+20)+"px";
+			a.style.height=(h+20)+"px";
+			return true;
+		}
+	}
+}*/
+var g_lastbloburl={"n0":"","n1":"","n2":""};
+var g_wraped=false;
+function proc_preview(i,obj){
+	function wrap(tag, text) {
+		return '<' + tag + '>' + text + '</' + tag + '>';
+	}
+	function escape(text) {
+		return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	}
+	function UnblobURL(num){
+		if(!num) num=0;	
+		var id="n"+num;
+		if(g_lastbloburl[id]){
+			window.URL.revokeObjectURL(g_lastbloburl[id]);
+			g_lastbloburl[id]="";
+		}
+	}
+	function blobURL(blob,num){
+		if(!num) num=0;	
+		var id="n"+num;
+		var s=window.URL.createObjectURL(blob);
+		g_lastbloburl[id]=s;
+		return s;
+	}
+	function img(url) {
+		return '<img id="image5"' + ' src="' + url + '">';
+	}
+	function audio(url) {
+		return '<audio id="audio5"' + ' src="' + url + '" controls autoplay style="width:500px">';
+	}
+	function video(url) {
+		return '<video id="audio5"' + ' src="' + url + '" controls autoplay height="100%" width="100%">';
+	}
+
+	function pdf(url,filename) {
+		var url2=encodeURIComponent(url)+'&title='+filename;
+		var s=getstorage("c_zip_pdf") || "";
+		if(!s){
+			if(ismsie || isedge) s='1'; else s='';
+		}
+		var s1='<select id="c_zip_pdf" data="'+url+'" data2="'+filename+'">';
+		s1+='<option value="">Default browser PDF viewer';
+		s1+='<option value="1">Mozilla web PDF viewer</select>';
+		if(!s) s1+=' &nbsp;<a href="'+url+'" target="_blank">Open in New Window</a>';
+		else s1+=' &nbsp;<a href="/pdfviewer/web/?file='+url2+'" target="_blank">Open in New Window</a>';
+		_getid('optionpanel').innerHTML=s1;
+		var a=_getid("c_zip_pdf");
+		if(a){
+			a.value=s;
+			a.onchange=function(){
+				setstorage("c_zip_pdf",this.value);			
+				setframe(pdf(this.getAttribute('data'),this.getAttribute('data2')),'pdf');				
+			}		
+		}
+		if(!s) s1='<embed width="100%" height="100%" name="plugin" src="'+url+'" type="application/pdf">';
+		else s1='<iframe src="//zip.softgateon.net/pdfviewer/web/?file='+url2+'" width=100% height=100% frameborder=0></iframe>';
+		return s1;
+	}	
+	function flv(url,mtype){
+		var s='<div id="msg" style="display:none"></div><video id="video1" class="video-js vjs-default-skin" width="550" height="380" controls preload="auto"><source src="'+url+'" type="'+(mtype || 'video/x-flv')+'"></video>';
+		s='<!DOCTYPE html><html><head><link href="//vjs.zencdn.net/4.12.11/video-js.css" rel="stylesheet"><sc'+'ript src="//vjs.zencdn.net/4.12.11/video.js"></s'+'cript></head><body>'+s+'<scr'+'ipt>';
+		s+='parent.proc_videojs(window);</sc'+'ript></body></html>';			
+		return s;
+	}	
+	function swf(url) {
+		return '<embed width="100%" height="100%" name="plugin" src="'+url+'" type="application/x-shockwave-flash">';
+	}	
+
+	var a=greader.files[i];
+
+	var filename=a.filename;
+	var size=a.uncompsize;
+	_getid("current").innerHTML=henc(filename);
+	_getid('msg').style.display='none';
+	_getid('blob').style.display='none';
+	_getid('savetodrive').style.display='none';
+	_getid('optionpanel').innerHTML='';
+	_getid('downsize').innerHTML='';
+
+	var s=filename.toLowerCase();
+	var preview=_getid("preview");
+	UnblobURL(0);UnblobURL(1);
+
+	function setframe(s,mtype,burl){
+		var c,ifrm2;
+		if(mtype=='img'){
+			var a=_getid("audio5");
+			if(a){
+				ifrm2=_getfrmdoc(a);
+				if(ifrm2){
+					c=ifrm2.document.getElementById("image5");
+					if(c) c.src=burl;
+				}
+			}
+		}
+		if(!c){
+			preview.innerHTML = '<iframe id="audio5" frameborder=0 marginwidth=0 marginheight=0 leftmargin=0 topmargin=0 scrolling="auto" style="width:100%;height:100%" allowfullscreen="true"></iframe>';
+						ifrm2 = _getfrmdoc(_getid("audio5"));
+			if(!ifrm2){
+				preview.innerHTML='<font class=error>Media Control Error!!</font>';
+				return;
+			}
+			s='<style>body,table,td{font-size:13px;font-family: Arial, Helvetica, sans-serif;}</style>'+s;
+			ifrm2.document.open();		
+			ifrm2.document.write(s);
+			ifrm2.document.close();	
+			c=ifrm2.document.getElementById("audio5") || ifrm2.document.getElementById("image5");			
+		}
+		if(mtype=='audio' || mtype=='video'){			
+			if(c){
+				var s=getCookie("c_audio_volume");
+				if(!s) s=1;
+				c.volume=s;
+				try{c.play();}catch(err){}
+				if (c.addEventListener){
+					c.addEventListener("volumechange", function(){
+						setCookie("c_audio_volume",this.volume);
+					}, false);
+				}
+			}
+		}else if(mtype=='img'){
+			if(c){
+				c.ondragstart = function(){return false;};
+				ifrm2.document.onselectstart=function(){return false;}
+				if(ifrm2.document.body){
+					ifrm2.document.body.onselectstart=function(){return false;}
+				}
+			}
+		}
+	}
+	var sizelimit={'img':20, 'audio':30, 'video':30, 'pdf':30, 'flv':30, 'swf':20, 'text':2, 'down':34};
+	if(!ismsie) sizelimit={'img':30, 'audio':60, 'video':100, 'pdf':60, 'flv':60, 'swf':30, 'text':10, 'down':200};
+	if (/.*(ico|png|gif|jpe?g|bmp|webp)$/.test(s)) {
+		if(size>sizelimit['img']*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview. (around '+sizelimit['img']+' MB limit)</font>';
+		}else{
+			greader.readFileAsBlob(filename).then(function(blob){
+				var s=blobURL(blob);
+				setframe(img(s),'img',s);
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}
+	}else if(/.*(aac|m4a|mp3|oga|ogg|opus|wav|weba|flac)$/.test(s)) {
+		if(size>sizelimit['audio']*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview. (around '+sizelimit['audio']+' MB limit)</font>';
+		}else{
+			greader.readFileAsBlob(filename).then(function(blob) {
+				setframe(audio(blobURL(blob)),'audio');
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}
+	}else if(/.*(webm|mp4|m4v|ogv|mkv|mov)$/.test(s)) {
+		if(size>sizelimit['video']*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview. (around '+sizelimit['video']+' MB limit)</font>';
+		}else{
+			greader.readFileAsBlob(filename).then(function(blob) {
+				setframe(video(blobURL(blob)),'video');
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}
+	}else if(/.*(pdf)$/.test(s)) {
+		if(size>sizelimit['pdf']*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview. (around '+sizelimit['pdf']+' MB limit)</font>';
+		}else{
+			greader.readFileAsBlob(filename).then(function(blob) {
+				setframe(pdf(blobURL(blob),encodeURIComponent(filename)),'pdf');
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}		
+	}else if(/.*(flv)$/.test(s)) {
+		if(size>sizelimit['flv']*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview. (around '+sizelimit['flv']+' MB limit)</font>';
+		}else{
+			greader.readFileAsBlob(filename).then(function(blob) {
+				setframe(flv(blobURL(blob),blob.type),'flv');
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}	
+	}else if(/.*(swf)$/.test(s)) {
+		if(size>sizelimit['swf']*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview. (around '+sizelimit['swf']+' MB limit)</font>';
+		}else{
+			greader.readFileAsBlob(filename).then(function(blob) {
+				setframe(swf(blobURL(blob)),'swf');
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}		
+	}else{
+		var istext=false;
+		var maxsize=sizelimit['text'];
+		if(/.*(txt|csv|log|text|tex|latex|conf|smi|sub|srt|css|js|java|json|rtf|html|htm|xml|py|asc|lst|pl|nfo|bas|ps|asp|php|reg|manifest|ascii|yml|eng|xsl|enc)$/.test(s)){
+			istext=true;
+			//maxsize=sizelimit['text']*2;
+		}
+		if(size>maxsize*1000*1000){
+			preview.innerHTML='<font class=info>The file size is too large to preview.</font>';
+			//preview.innerHTML='<font class=info>No Preview</font>';
+		}else{
+			function wrap2(tag, text) {
+				if(g_wraped) return '<' + tag + ' id="pre1" style="white-space:pre-wrap">' + text + '</' + tag + '>';
+				else return '<' + tag + ' id="pre1">' + text + '</' + tag + '>';
+			}
+			greader.readFileAsText(filename).then(function(text){
+				function setcontrol(){
+					var c=_getid('chk_wrap');
+					if(!c)return;
+					c.checked=g_wraped;
+					c.onclick=function(){
+						g_wraped=this.checked;
+						setstorage("c_wraped",g_wraped);
+						var a=_getid("audio5"); if(!a)return;
+						var ifrm2=_getfrmdoc(a);
+						if(ifrm2){
+							var c=ifrm2.document.getElementById("pre1");
+							if(c){
+								if(g_wraped) c.setAttribute("style","white-space:pre-wrap");
+								else c.setAttribute("style","");
+							}
+						}
+					}
+				}
+				if(istext && text.indexOf("�")<0){
+					if(text.length>500*1000){
+						text=text.substr(0,500*1000)+"...more";
+					}
+				}else if(text.length>10*1000){
+					text=text.substr(0,10*1000)+"...more";
+				}
+				setframe(wrap2('pre', escape(text)),'text');
+				var s1='<button onclick="proc_selall()" id="btn_selall" title="Select all & Press Ctrl+C, Apple+C to copy to clipboard">Select all</button> <label><input id="chk_wrap" type=checkbox>Wrap</label>';				
+				var op=_getid('optionpanel');
+				if(/.*(htm|html|xml)$/.test(s)) {
+					greader.readFileAsBlob(filename).then(function(blob) {
+						s1+=' &nbsp;<a href="'+blobURL(blob)+'" target="_blank">View in HTML format</a>';
+						op.innerHTML=s1;
+						setcontrol();
+					});					
+				}else{
+					op.innerHTML=s1;
+					setcontrol();
+				}
+			},function(err){
+				preview.innerHTML='<font class=error>'+henc(err)+'</font>';
+			});
+		}		
+	}
+	
+	if(size>sizelimit['down']*1000*1000){
+		_getid('msg').innerHTML='<font class=info>The file size is too large to download. (around '+sizelimit['down']+' MB limit)</font>';
+		_getid('msg').style.display='';
+	}else{
+		greader.readFileAsBlob(filename).then(function(blob) {			
+			var fname=getfilename(filename);
+
+			var blobLink = _getid('blob');			
+			blobLink.download = fname;
+			if(!navigator.msSaveBlob) blobLink.target="_blank";
+			if(!issafari){
+		      if(navigator.msSaveBlob){
+				  blobLink.href="#";
+				  blobLink.onclick=function(){
+					navigator.msSaveBlob(blob, fname);
+					return false;
+				  }
+			  }else{
+				blobLink.href = blobURL(blob,1);
+			  }
+			}else{
+				blobLink.href = blobURL(blob,1);
+			}
+			blobLink.style.display='';
+			_getid('downsize').innerHTML='('+get_hfilesize(blob.size)+')';
+
+			var a=_getid('savetodrive');
+			if(a){
+				a.style.display='';
+				a.onclick=function(){
+					var arr=[];
+					arr.push({'filename':fname, 'blob':blob, 'size':blob.size, 'filename2':filename});
+					proc_saver(arr);
+					return false;
+				}			
+			}
+		});
+	}
+
+	var a=_getid("filenames-view").getElementsByTagName('A');
+	for(var i = 0; i < a.length; i++){    
+		a[i].style.color='';
+	}
+	if(obj) obj.style.color='green';
+}
+function getfilename(s){
+	var p1=s.lastIndexOf("/");
+	if(p1>=0) s=s.substr(p1+1,s.length);
+	return s;
+}
+function proc_selall(){
+	var a=_getid("audio5");
+	if(!a)return;
+	var ifrm2 = _getfrmdoc(a);
+	if(!ifrm2)return;
+	var doc=ifrm2.document;
+	var element=doc.body;
+	if(doc.body.createTextRange) {
+       var range = doc.body.createTextRange();
+       range.moveToElementText(element);
+       range.select();
+	   ifrm2.focus(); 
+	}else if (ifrm2.getSelection) {
+       var selection = ifrm2.getSelection();        
+       var range = doc.createRange();
+       range.selectNodeContents(element);
+       selection.removeAllRanges();
+       selection.addRange(range);
+	   ifrm2.focus(); 
+   }   
+}
+
+var okflash=null;
+function check_flash(){
+	if(okflash!=null)return;
+	okflash=false;
+	try{
+		if(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'))okflash=true;
+	}catch(e){
+		var a=navigator.mimeTypes;
+		if(a && a['application/x-shockwave-flash'] != undefined && a['application/x-shockwave-flash'].enabledPlugin)okflash=true;
+	}
+}
+
+function proc_videojs(win){
+	if(!win.videojs){
+		alert('Not loaded library properly. Try again. or This browser does not support. Please upgrade your browser.');
+		return;
+	}
+	win.videojs("video1").ready(function(){
+		var myPlayer = this;
+		myPlayer.on("error", function(){ 
+			function log(s){
+				var a=win.document.getElementById('msg');
+				if(a){
+					a.style.display='';
+					a.innerHTML='<div style="color:red;font-size:14px;margin:3px">'+s+'</div>';
+				}
+			}
+			var err=this.error();
+			if(err.message=='No compatible source was found for this video.'){
+				var s='The player (HTML5, Flash) does not support this media format.';
+				var a=win.videojs.options.techOrder;
+				if(a.length==1 && a[0]=='html5'){
+					s+=' or Local files only support HTML5 player.';
+				}else{
+					check_flash();
+					if(!okflash) s+=' or Check the flash player is installed.</font> <a href="https://www.adobe.com/go/getflashplayer" target="_blank">Get Flash</a>';
+				}
+				log(s);
+			}else{			
+				log('Play Error!!');
+			}
+		});
+
+		var s=getCookie("c_audio_volume");
+		if(!s) s=1;
+		try{
+			myPlayer.volume(s);
+			myPlayer.play();
+		}catch(err){
+			return;
+		}	
+		myPlayer.on("volumechange", function(){ 
+			setCookie("c_audio_volume", myPlayer.volume());
+		});
+		myPlayer.on("ended", function(){ 
+		});
+	});
+}
+</script>
+
+</td></tr><tr style="height: auto !important;"><td align="center">
+<div style="width:950px">
+<script async="" src="./UnZip &amp; Viewer Online_files/f(1).txt"></script>
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-1113541014872557" data-ad-slot="5774213902" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 280px; width: 950px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:950px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="950" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./UnZip &amp; Viewer Online_files/ads(1).html" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</td></tr><tr><td>
+<table align="center" width="600"><tbody><tr><td align="center">
+Zip, UnZip Online reads files without uploading the file to any servers.<br>
+Zip, UnZip Online does not save or share the file you select. It only works locally without going through the server. Works well in Chrome, Firefox, and Latest browser. (HTML5 technology)
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+<script>
+init();
+</script>
+
+<style>
+a.bottomlink:link{text-decoration:underline;}
+a.bottomlink:visited{text-decoration:underline;}
+a.bottomlink:active{text-decoration:underline;}
+a.bottomlink:hover{text-decoration:underline;}
+</style>
+
+<table id="bottomtable" align="center">
+<tbody><tr><td height="7">
+</td></tr><tr><td align="center"><span id="bottomtitle">ⓒ UnZip &amp; Viewer Online, 2025</span>
+	</td></tr></tbody></table><br>
+
+
+<div id="gd_window" class="gd_div" style="z-index:10000001;display:none;"></div>
+<div id="gd_btn_login" class="gd_div" style="z-index: 10000000; border: 1px solid rgb(0, 0, 0); padding: 10px; left: 404.5px; top: 1158.5px; display: none;">
+<table>
+<tbody><tr><td align="center"><button onclick="gd_login_manual()" style="font-size:20px"><img src="./UnZip &amp; Viewer Online_files/product20.png" align="absmiddle"> Login &amp; Authorize</button> <button onclick="gd_login_close()" style="font-size:20px">Close</button>
+</td></tr><tr><td>To use this app, Please login to the Google Drive and authorize this app or website.
+<br>(Note: If your browser block or disable the third-party cookies, this login does not work correctly.)
+</td></tr></tbody></table>
+</div>
+<script>
+var CLIENT_ID = '535113574260-e5j63cvudm0mhghh5ef8t8lg7o320nep.apps.googleusercontent.com';
+var SCOPES = [
+	'https://www.googleapis.com/auth/drive.install',
+	'https://www.googleapis.com/auth/drive.file'
+];
+var gd_developerKey='AIzaSyD_bLkiiJ5sFpF9dFjdaVcP7ldH9CrivME';
+var gd_mimetype="application/zip,application/x-zip-compressed,application/x-zip,application/epub+zip,application/vnd.google-earth.kmz,application/vnd.oasis.opendocument.text,application/vnd.oasis.opendocument.presentation,application/vnd.oasis.opendocument.spreadsheet"+",application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/x-iwork-keynote-sffkey,application/x-iwork-pages-sffpages,application/x-iwork-numbers-sffnumbers,application/vnd.ms-xpsdocument,application/x-cbz,application/vnd.android.package-archive,application/vnd-ms-visio.drawing,application/java-archive,application/x-smartbook-notebook,application/vnd.oasis.opendocument.chart";
+var gd_export_extension=["zip"];
+var gd_state='{"ids":["1OafVXzmBygL9k3C1BNW4sXbJeJIIMhrV"],"action":"open","resourceKeys":{}}';
+
+var gd_picker,gd_loaded,gd_pickerloaded,gd_lastprogress,gd_issupported,gd_isdownloading,gd_state2;
+var gd_loginexp=0;
+var gd_callback;
+
+function go(a){
+	if(a && a.style.display==''){
+		var x=getScrollLeft()+((getWindowWidth()-a.clientWidth) / 2);
+		var y=getScrollTop()+((getWindowHeight()-a.clientHeight) / 2);
+		a.style["border"]="1px solid #000000";
+		a.style["padding"]="10px";
+		a.style.left=x+"px";
+		a.style.top=y+"px";
+	}
+}
+function gd_btn_login2(e,callback){
+	go(_getid("gd_btn_login"));
+	go(_getid("gd_window"));	
+	setTimeout(function(){
+		go(_getid("gd_btn_login"));
+		go(_getid("gd_window"));	
+		if(callback)callback();
+	},10);
+}
+function gd_btn_login(isshow){
+	var a=_getid("gd_btn_login");
+	if(isshow){
+		a.style.display='';
+		gd_btn_login2();
+	}else{
+		a.style.display='none';
+	}
+}
+function gd_login_close(){
+	gd_btn_login(false);
+	gd_state='';
+}
+function gd_login_manual(){
+	var p={'client_id': CLIENT_ID, 'scope': SCOPES.join(' '), 'immediate': false};
+	if(gd_userId){p['login_hint']=gd_userId;p['authuser']=-1;}
+	gapi.auth.authorize(p, function (authResult){ 
+		if (authResult && !authResult.error){
+			gd_loginexp=(new Date()).getTime()+parseInt(authResult.expires_in*0.7*1000);
+			gd_btn_login(false);gd_info();
+			show_message("Login ok!!");
+			if(gd_callback) gd_callback(true);
+			else gd_open_state(true);
+		}else{
+			gd_btn_login(true);
+			show_message("Login failed!!");
+		}
+	});
+}
+function gd_login(callback,react){
+	if(gd_loginexp==0 || gd_loginexp<(new Date()).getTime()){
+	}else{
+		callback(true);
+		return;
+	}
+	var p={'client_id': CLIENT_ID, 'scope': SCOPES.join(' '), 'immediate': true};
+	if(gd_userId){p['login_hint']=gd_userId;p['authuser']=-1;}
+	gapi.auth.authorize(p, function (authResult){
+		if (authResult && !authResult.error){
+			gd_loginexp=(new Date()).getTime()+parseInt(authResult.expires_in*0.7*1000);
+			gd_btn_login(false);gd_info();
+			callback(true);
+		}else{
+			show_message("Login failed!!");
+			gd_btn_login(true);
+			callback(false);
+			if(react) gd_callback=callback;
+			else gd_callback=null;
+		}
+	});
+}
+
+function gd_loadpicker() {		
+	gapi.load('picker',{'callback': function(){
+			gd_pickerloaded=true;
+		}
+	});	
+}
+function gd_createpicker() {
+	var access_token=gapi.auth.getToken().access_token;
+	if(!access_token){
+		alert('Error!! No access token.');
+		return;
+	}
+	if(!gd_picker){
+      //var view = new google.picker.View(google.picker.ViewId.DOCS);
+      //view.setMimeTypes("application/zip");
+	  var view2 = new google.picker.DocsView(google.picker.ViewId.DOCS);
+	  //if(gd_mimetype) view2.setMimeTypes(gd_mimetype);
+	  view2.setMode(google.picker.DocsViewMode.LIST);
+
+		var view4 = new google.picker.DocsView();
+		view4.setIncludeFolders(true);
+		view4.setParent("root");
+		view4.setMimeTypes(gd_mimetype);
+		view4.setMode(google.picker.DocsViewMode.LIST);
+		//var view5 = new google.picker.View(google.picker.ViewId.RECENTLY_PICKED);
+		var view6 = new google.picker.DocsView(); //shared
+		view6.setIncludeFolders(true);
+		view6.setEnableDrives(true);
+		view6.setMimeTypes(gd_mimetype);
+		view6.setMode(google.picker.DocsViewMode.LIST);
+
+      gd_picker = new google.picker.PickerBuilder()
+          //.enableFeature(google.picker.Feature.NAV_HIDDEN)
+          //.enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+		  //.setLocale(window.navigator.language || window.navigator.userLanguage || "en")
+		  .setAppId(CLIENT_ID.split("-")[0]) //scope
+          .setOAuthToken(access_token)
+          .addView(view2)
+		  .addView(view4)
+		  //.addView(view5)
+		  .addView(view6)
+          .addView(new google.picker.DocsUploadView())
+          .setDeveloperKey(gd_developerKey)
+          .setCallback(gd_pickercallback)
+          .build();
+	}
+	gd_picker.setVisible(true);
+}
+function gd_pickercallback(data) {
+	if (data.action == google.picker.Action.PICKED) {
+		if(data.docs && data.docs.length>0 && data.docs[0].id){
+	        var fileId = data.docs[0].id;
+			gd_loadfile(fileId);
+		}
+	}
+}
+function gd_loadfile(fileId){
+	if(gadb){alert('Please disable the adblock for free use.');hide_message();return;}	if(gd_isdownloading){
+		alert("It's downloading. Please try again in a few minutes. or Cancel the current download.");
+		return;
+	}
+	show_message("<table><tr><td><div id='gd_progress'>Ready...</div></table>",'','','',1000*30);		
+	gapi.client.load('drive', 'v2', function() {
+		var request = gapi.client.drive.files.get({
+			'fileId': fileId, 'supportsAllDrives':true
+		});
+		request.execute(function(resp){
+			function end(){
+				gd_isdownloading=false;
+				clearTimeout(messagetimer);
+				hide_message();
+			}
+			function error(s){
+				alert(s);
+			}
+			//console.log(resp);
+
+			if(resp && resp.parents && resp.parents[0] && resp.parents[0].id){
+				gfids=resp.parents[0].id;
+				gfidsName=resp.title;
+			}
+			var downloadurl;
+			var downloadurl2='';
+			if(resp.downloadUrl){
+				downloadurl='https://www.googleapis.com/drive/v2/files/'+resp.id+'?alt=media';//resp.downloadUrl;
+				go();
+			}else if(resp.exportLinks){
+				var s1='<b>Select a file type to export and download:</b><br>Supported zip type: zip, epub, odt, odp, ods, docx, pptx, xlsx<br><br>';
+				var prefer=getstorage('c_prefer_ext');
+				var list=[];
+				for (x in resp.exportLinks){
+					var a={};
+					a.name=x;
+					a.url=resp.exportLinks[x] || '';
+					var match=a.url.match(/(exportFormat=|format=)(.*?)(&|$)/i);
+					if(match) a.ext=match[2];
+					s1+='<label style="cursor:pointer"><input type=radio name=gdsel value="'+list.length+'"';
+					if(prefer==a.ext) s1+=' checked=true';
+					s1+='> '+a.name;
+					if(a.ext) s1+=' (.'+a.ext+')';
+					s1+='</label><br><br>';
+					list.push(a);
+				}				
+				var gwin=_getid("gd_window");
+				gwin.innerHTML='<table><tr><td>'+s1+'<tr><td align=center><button id="gd_ok" style="font-size:17px">OK</button> <button id="gd_cancel" style="font-size:17px">Cancel</button></table>';
+				gwin.style.display='';
+				gd_btn_login2(false,function(){
+					_getid('gd_ok').focus();
+				});
+				function selok(){
+					gwin.style.display='none';
+					var ans;
+					var radios = gwin.getElementsByTagName('input');
+					for(var i = 0; i < radios.length; i++){
+						if(radios[i].type=='radio' && radios[i].checked){
+							ans=radios[i].value;
+							break;
+						}
+					}					
+					ans=parseInt(ans);
+					if(isNaN(ans) || ans<0 || ans>list.length-1){
+						end();
+						alert('No selected.');
+						return;
+					}
+					downloadurl=list[ans].url;
+					downloadurl2='https://www.googleapis.com/drive/v2/files/'+resp.id+'/export?mimeType='+encodeURIComponent(list[ans].name);
+					resp.fileExtension=list[ans].ext || '';
+					setstorage('c_prefer_ext',resp.fileExtension);
+					go();
+				}
+				var a=gwin.getElementsByTagName('label');
+				for(var i = 0; i < a.length; i++){
+					a[i].ondblclick=selok;
+				}
+				_getid('gd_ok').onclick=selok;
+				_getid('gd_cancel').onclick=function(){
+					gwin.style.display='none';
+					end();
+				}
+				/*for (x in resp.exportLinks){	
+					for(var i = 0; i < gd_export_extension.length; i++){    
+						if(x.toLowerCase().indexOf(gd_export_extension[i])>=0){
+							downloadurl=resp.exportLinks[x];
+							resp.fileExtension=gd_export_extension[i];
+							break;
+						}						
+					}					
+					if(downloadurl)break;
+				}*/
+			}else{go();}
+
+			function go(){
+			  var accessToken = gapi.auth.getToken().access_token;
+			  if(!accessToken){
+			  	end();
+				alert('Error!! No access token.');
+				return;
+			  }
+			  if(downloadurl){				
+					function gettitle(){
+						var s='';
+						if(resp.title){
+							if(resp.exportLinks) s=resp.title+'.'+resp.fileExtension;
+							else s=resp.title;
+						}else{
+							s='No Name';
+						}
+						return s;
+					}
+					gd_isdownloading=true;
+					show_message("<table><tr><td><div id='gd_progress'>Downloading...</div><td>&nbsp; <a href='#' id='gd_cancel' style='font-size:15px'>Cancel</a></table>",'','','',1000*60*60*24*2);
+				    var xhr = new XMLHttpRequest();
+					var c=_getid('gd_cancel');
+					if(c){
+						c.onclick=function(){
+							xhr.abort(); 
+							end();
+							return false;
+						}
+					}
+					gd_lastprogress=(new Date()).getTime();
+					var su=downloadurl2 || downloadurl;//+'&access_token='+encodeURIComponent(accessToken);
+					/*if(resp && resp.mimeType=='application/vnd.google-apps.spreadsheet'){
+						su='https://speedtesting.herokuapp.com/proxyrss/geturl2.php?max=12&url='+encodeURIComponent(su);
+					}*/
+					xhr.open('GET', su);
+					if(issafari) xhr.responseType = 'arraybuffer';
+					else xhr.responseType = 'blob';
+					xhr.onprogress=function(event){
+						if(gd_lastprogress){
+							var elaspetime = new Date();
+							var dt=(elaspetime.getTime()-gd_lastprogress)/1000;
+							if(dt<1)return;
+							gd_lastprogress=elaspetime.getTime();
+						}
+						var a=event;
+						var total=a.totalSize || resp.fileSize || 0;//a.total
+						var current=a.position || a.loaded  || 0;
+						var c=_getid('gd_progress');
+						if(c) c.innerHTML='Downloading... ('+number_format(current)+'/'+number_format(total)+')';
+					};
+					xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+				    xhr.onload = function(){
+						end();
+						if(this.status == 200){
+							if(issafari){								
+								var blob = new Blob([this.response]);
+							}else{
+								var blob = this.response;								
+							}
+							/*if(blob.size<6 && resp.mimeType=='application/vnd.google-apps.spreadsheet'){
+								alert('This Google spreadsheet format is invalid file, or It exceeds the file size limt. The maximum download size is about 12 megabytes.');
+								return;
+							}*/
+							blob.name=gettitle();
+							gblob=blob; 
+							handleFileSelect('',blob);
+						}else{
+							var s="Error (status) " + this.status + "("+this.statusText+") occurred while receiving the file.";
+							error(s);
+						}
+					};
+					xhr.onerror = function(e){      
+						end();
+						var s="Error " + e.target.status + " occurred while receiving the file.";
+						error(s);
+					};
+					xhr.send();
+					
+					function getsize(){
+						if(!resp.fileSize) return '';
+						function humanFileSize(bytes){
+							var thresh = 1024;
+							if(bytes < thresh) return bytes + ' B';
+							var units = ['kB','MB','GB','TB','PB','EB','ZB','YB'];
+							var u = -1;
+							do {
+								bytes /= thresh;
+								++u;
+							} while(bytes >= thresh);
+							return bytes.toFixed(1)+' '+units[u];
+						}
+						return ' ('+humanFileSize(resp.fileSize)+')';
+					}					
+					function setdown(url){
+						var s=gettitle();
+						_getid("downlink").innerHTML='&nbsp;<a id="adownlink" style="font-size:17px">Download the file</a>'+getsize()+'&nbsp; <font style="color:green">'+henc(s)+'</font>';
+						var a=_getid("adownlink");
+						if(a){
+							a.href=(resp.downloadUrl && resp.webContentLink) || url;
+							a.download=s || "";
+							a.title=s || "";
+						}
+					}
+					setdown(downloadurl+'&access_token='+encodeURIComponent(accessToken));
+			  }else{
+				end();
+				if(resp.error && resp.error.message){
+					alert(resp.error.message);
+				}else{
+					alert('Error!! Can not find a download URL.');
+				}
+			  }
+			}
+		});
+	});
+}
+function gd_open_picker(){
+	if(!gd_issupported){
+		alert("This browser does not support.");
+		return;
+	}
+	if(!gd_loaded || !gd_pickerloaded){
+		alert('Not loaded library. Please try again in a few minutes.');
+		return;
+	}
+	gd_login(function(result){
+		if(!result) return;
+		gd_createpicker();
+	},true);
+}
+function gd_getparam(s,name){
+	name=name+"=";
+	name=name.toLowerCase();
+	var p1=s.toLowerCase().indexOf(name);
+	if (p1<0) return "";
+	s=s.substr(p1+name.length);
+	var p2=s.toLowerCase().indexOf("&");
+	if (p2>=0) {
+		return s.substr(0,p2);
+	} else {
+		return s;
+	}
+}
+function gd_open_state(force){
+	var s=gd_state;
+	if(s){
+		if(!gd_issupported){
+			gd_state='';
+			alert("This browser does not support.");
+			return;
+		}
+		s=decodeURIComponent(s);
+		try{
+			var a=JSON.parse(s);
+			var fileId;
+			if(a.ids) fileId=a.ids[0];
+			if(!fileId && a.exportIds) fileId=a.exportIds[0];
+			if(fileId){
+				gd_login(function(result){
+					if(gd_open2 && !force)return;
+					gd_open2=true;
+					if(!result) return;
+					//_getid('gd_btn_reopen').style.display='';
+					gd_state='';
+					gd_loadfile(fileId);
+				});				
+			}
+		}catch(err){
+		}
+	}
+}
+var gd_open2;
+function gd_open_state2(){
+	setTimeout(function(){
+		if(!gd_open2)gd_open_state();
+	}, 1000);
+}
+
+function gd_clientload(){
+	gd_loaded=true;
+	if (window.addEventListener){
+		window.addEventListener("resize", gd_btn_login2, false);
+	}else if (window.attachEvent){
+		window.attachEvent("onresize", gd_btn_login2);
+	}
+	if(!window.FileReader || !window.URL || !window.XMLHttpRequest){
+		hide_message();
+	}else{
+		gd_issupported=true;
+	}
+	gd_open_state();
+}
+var gd_userId,gd_email;
+function gd_weburl(){
+	var s;
+	if(gd_email) s='https://drive.google.com/?authuser='+gd_email;
+	else s='https://drive.google.com/';
+	return s;
+}
+function gd_info(){
+	if(gd_email)return;
+	gapi.client.load('drive', 'v2', function(){
+		var request = gapi.client.drive.about.get();
+		request.execute(function(resp) {
+			if(resp && resp.user){
+				if(gd_email)return;
+				gd_email=resp.user.emailAddress;
+				if(gd_email){
+					var a=_getid('btn_open');
+					var b=_getid('gd_btn_reopen');
+					if(a)a.title=a.title+' ('+gd_email+')';
+					if(b)b.title=b.title+' ('+gd_email+')';
+				}				
+			}
+		});
+	});
+}
+function gd_init(){
+	gd_state2=gd_state;
+	if(gd_state){
+		try{
+			var a=JSON.parse(gd_state);
+			gd_userId=a.userId;
+			if(a.ids || a.exportIds) show_message("<table><tr><td><div id='gd_progress'>Ready...</div></table>",'','','',1000*30);		
+		}catch(err){}		
+		if(window.addEventListener) window.addEventListener("load", gd_open_state2, false);
+		else if (window.attachEvent) window.attachEvent("onload", gd_open_state2);
+	}
+	if(getstorage("c_wraped")=='true' && typeof g_wraped != 'undefined') g_wraped=true;	
+}
+gd_init();
+</script>
+<script type="text/javascript" src="./UnZip &amp; Viewer Online_files/client.js.download" gapi_processed="true"></script>
+<script type="text/javascript" src="./UnZip &amp; Viewer Online_files/api.js.download" gapi_processed="true"></script>
+
+<div id="savediv"></div>
+<script>
+var saverinited,gfids,gfidsName;
+function proc_saver(arr){
+	function resize(){
+		var a=_getid('saver');
+		if(a && a.style.display==''){
+			//var x=getScrollLeft()+((getWindowWidth()-a.clientWidth) / 2);			
+			var x=_getid('maintable').offsetLeft+((_getid('maintable').offsetWidth-a.clientWidth) / 2);
+			var y=getScrollTop()+((getWindowHeight()-a.clientHeight) / 2);
+			if(x<0)x=0;if(y<0)y=0;
+			a.style.left=x+"px";
+			a.style.top=y+"px";
+		}
+	}
+	if(!saverinited){
+		saverinited=true;
+		if (window.addEventListener){
+			window.addEventListener("resize", resize, false);
+		}else if (window.attachEvent){
+			window.attachEvent("onresize", resize);
+		}
+	}
+	
+	if(arr.length==0){
+		alert('No files.');
+		return;
+	}
+	var obj=_getid('saver');
+	if(!obj){
+		_getid('savediv').innerHTML='<iframe id="saver" style="display:none;position:absolute;border:1px solid black;" src="" frameborder=0 marginwidth=0 marginheight=0 leftmargin=0 topmargin=0 scrolling="no"></iframe>';
+		obj=_getid('saver');
+	}
+	var btn_saver=_getid('btn_saver');
+	var ifrm=_getfrmdoc(obj);
+	if(ifrm){		
+		var w=800;
+		var h=530;
+		if(ifrm.proc_additem){
+			ifrm.proc_additem(arr,true,gd_userId,gfids,gfidsName);
+			if(arr.length>1 && btn_saver){
+				btn_saver.onclick();
+			}else{
+				if(btn_saver){
+					show_message('Added to the list. ('+henc(arr[0].filename)+')<br>Click the "Show Saver" button to see the list.');
+				}else{
+					obj.style.display='';resize();
+				}
+			}
+		}else{
+			obj.style.width=w+'px';
+			obj.style.height=h+'px';
+			obj.style.display='';resize();
+			if(btn_saver) ifrm.location.replace('save_to_drive.php?noclose=1&twidth='+w+'&theight='+h);
+			else ifrm.location.replace('save_to_drive.php?twidth='+w+'&theight='+h);
+			var timer=setInterval(function(){
+				if(ifrm.proc_additem){
+					clearInterval(timer);
+					ifrm.proc_additem(arr,true,gd_userId,gfids,gfidsName);
+					if(btn_saver){
+						btn_saver.style.display='';
+						btn_saver.onclick=function(){
+							if(_getid('saver').style.display!=''){
+								var d=ifrm.document.getElementById("attachment");
+								if(d){d.style.width='99%';setTimeout(function(){d.style.width='100%';},10);}
+							}
+							_getid('saver').style.display='';
+							resize();
+						}
+					}
+				}
+			},300);
+		}
+	}
+}
+function proc_saver_close(){
+	_getid('saver').style.display='none';
+}
+</script>
+
+<script src="./UnZip &amp; Viewer Online_files/compat2.js.download"></script>
+<script>init_compat201912_a();</script>
+<script>
+function gd_findscope(a){try{if(!a)return!1;a=" "+a.toLowerCase()+" ";var b=SCOPES;SCOPES.split&&"string"===typeof SCOPES&&(b=SCOPES.split(" "));for(var c=0;c<b.length;c++)if(b[c]){var d=(b[c].split("/").pop().toLowerCase()||"").replace(/^\s*|\s*$/g,"");"drive.appfolder"==d&&(d="drive.appdata");if(/^(drive\.install|drive\.file|drive|drive\.readonly|drive\.appdata|drive\.appfolder|documents|spreadsheets|script\.external_request|calendar|gmail\.send|gmail\.compose|gmail\.readonly|youtube|books|drive\.activity\.readonly|drive\.activity|drive\.apps\.readonly|drive\.metadata|drive\.metadata\.readonly|drive\.scripts)$/.test(d)&&
+0>a.indexOf(d+" "))return!1}}catch(e){}return!0}
+function init_fix_scope(){var a=window.gd_login_manual,b=window.gd_login;a||(a=window.proc_login_manual);b||(b=window.proc_login);a&&(a+="");b&&(b+="");a&&0<=a.indexOf("if (authResult && !authResult.error")&&0>a.indexOf("gd_findscope(")?(a=a.replace("if (authResult && !authResult.error","if (authResult && !authResult.error && gd_findscope(authResult.scope)"),window.eval(a)):a&&0<=a.indexOf("if (authResult && (!authResult.error || authResult.access_token)")&&0>a.indexOf("gd_findscope(")&&(a=a.replace("if (authResult && (!authResult.error || authResult.access_token)",
+"if (authResult && (!authResult.error || authResult.access_token) && gd_findscope(authResult.scope)"),window.eval(a));b&&0<=b.indexOf("if (authResult && !authResult.error")&&0>b.indexOf("gd_findscope(")?(b=b.replace("if (authResult && !authResult.error","if (authResult && !authResult.error && gd_findscope(authResult.scope)"),window.eval(b)):b&&0<=b.indexOf("if (authResult && (!authResult.error || authResult.access_token)")&&0>b.indexOf("gd_findscope(")&&(b=b.replace("if (authResult && (!authResult.error || authResult.access_token)",
+"if (authResult && (!authResult.error || authResult.access_token) && gd_findscope(authResult.scope)"),window.eval(b))}init_fix_scope();
+</script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_2_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./UnZip &amp; Viewer Online_files/ads(2).html" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin allow-storage-access-by-user-activation" allow="identity-credentials-get" aria-hidden="true" frame-border="0" src="./UnZip &amp; Viewer Online_files/iframe.html" style="position: absolute; width: 1px; height: 1px; inset: -9999px; display: none;"></iframe><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./UnZip &amp; Viewer Online_files/saved_resource(1).html"></iframe><iframe name="__tcfapiLocator" src="./UnZip &amp; Viewer Online_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="./UnZip &amp; Viewer Online_files/saved_resource(3).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="./UnZip &amp; Viewer Online_files/saved_resource(4).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><div style="color-scheme: initial !important; forced-color-adjust: initial !important; mask: initial !important; math-depth: initial !important; position: initial !important; position-anchor: initial !important; text-size-adjust: initial !important; appearance: initial !important; color: initial !important; font: initial !important; font-palette: initial !important; font-synthesis: initial !important; position-area: initial !important; text-orientation: initial !important; text-rendering: initial !important; text-spacing-trim: initial !important; -webkit-font-smoothing: initial !important; -webkit-locale: initial !important; -webkit-text-orientation: initial !important; -webkit-writing-mode: initial !important; writing-mode: initial !important; zoom: initial !important; accent-color: initial !important; place-content: initial !important; place-items: initial !important; place-self: initial !important; alignment-baseline: initial !important; anchor-name: initial !important; anchor-scope: initial !important; animation-composition: initial !important; animation: initial !important; app-region: initial !important; aspect-ratio: initial !important; backdrop-filter: initial !important; backface-visibility: initial !important; background: initial !important; background-blend-mode: initial !important; baseline-shift: initial !important; baseline-source: initial !important; block-size: initial !important; border-block: initial !important; border: initial !important; border-radius: initial !important; border-collapse: initial !important; border-end-end-radius: initial !important; border-end-start-radius: initial !important; border-inline: initial !important; border-start-end-radius: initial !important; border-start-start-radius: initial !important; inset: initial !important; box-decoration-break: initial !important; box-shadow: initial !important; box-sizing: initial !important; break-after: initial !important; break-before: initial !important; break-inside: initial !important; buffered-rendering: initial !important; caption-side: initial !important; caret-color: initial !important; clear: initial !important; clip: initial !important; clip-path: initial !important; clip-rule: initial !important; color-interpolation: initial !important; color-interpolation-filters: initial !important; color-rendering: initial !important; columns: initial !important; column-fill: initial !important; gap: initial !important; column-rule: initial !important; column-span: initial !important; contain: initial !important; contain-intrinsic-block-size: initial !important; contain-intrinsic-size: initial !important; contain-intrinsic-inline-size: initial !important; container: initial !important; content: initial !important; content-visibility: initial !important; counter-increment: initial !important; counter-reset: initial !important; counter-set: initial !important; cursor: initial !important; cx: initial !important; cy: initial !important; d: initial !important; display: initial !important; dominant-baseline: initial !important; empty-cells: initial !important; field-sizing: initial !important; fill: initial !important; fill-opacity: initial !important; fill-rule: initial !important; filter: initial !important; flex: initial !important; flex-flow: initial !important; float: initial !important; flood-color: initial !important; flood-opacity: initial !important; grid: initial !important; grid-area: initial !important; height: initial !important; hyphenate-character: initial !important; hyphenate-limit-chars: initial !important; hyphens: initial !important; image-orientation: initial !important; image-rendering: initial !important; initial-letter: initial !important; inline-size: initial !important; inset-block: initial !important; inset-inline: initial !important; interpolate-size: initial !important; isolation: initial !important; letter-spacing: initial !important; lighting-color: initial !important; line-break: initial !important; list-style: initial !important; margin-block: initial !important; margin: initial !important; margin-inline: initial !important; marker: initial !important; mask-type: initial !important; math-shift: initial !important; math-style: initial !important; max-block-size: initial !important; max-height: initial !important; max-inline-size: initial !important; max-width: initial !important; min-block-size: initial !important; min-height: initial !important; min-inline-size: initial !important; min-width: initial !important; mix-blend-mode: initial !important; object-fit: initial !important; object-position: initial !important; object-view-box: initial !important; offset: initial !important; opacity: initial !important; order: initial !important; orphans: initial !important; outline: initial !important; outline-offset: initial !important; overflow-anchor: initial !important; overflow-block: initial !important; overflow-clip-margin: initial !important; overflow-inline: initial !important; overflow-wrap: initial !important; overflow: initial !important; overlay: initial !important; overscroll-behavior-block: initial !important; overscroll-behavior-inline: initial !important; overscroll-behavior: initial !important; padding-block: initial !important; padding: initial !important; padding-inline: initial !important; page: initial !important; page-orientation: initial !important; paint-order: initial !important; perspective: initial !important; perspective-origin: initial !important; pointer-events: initial !important; position-try: initial !important; position-visibility: initial !important; quotes: initial !important; r: initial !important; resize: initial !important; rotate: initial !important; ruby-align: initial !important; ruby-position: initial !important; rx: initial !important; ry: initial !important; scale: initial !important; scroll-behavior: initial !important; scroll-initial-target: initial !important; scroll-margin-block: initial !important; scroll-margin: initial !important; scroll-margin-inline: initial !important; scroll-marker-group: initial !important; scroll-padding-block: initial !important; scroll-padding: initial !important; scroll-padding-inline: initial !important; scroll-snap-align: initial !important; scroll-snap-stop: initial !important; scroll-snap-type: initial !important; scroll-timeline: initial !important; scrollbar-color: initial !important; scrollbar-gutter: initial !important; scrollbar-width: initial !important; shape-image-threshold: initial !important; shape-margin: initial !important; shape-outside: initial !important; shape-rendering: initial !important; size: initial !important; speak: initial !important; stop-color: initial !important; stop-opacity: initial !important; stroke: initial !important; stroke-dasharray: initial !important; stroke-dashoffset: initial !important; stroke-linecap: initial !important; stroke-linejoin: initial !important; stroke-miterlimit: initial !important; stroke-opacity: initial !important; stroke-width: initial !important; tab-size: initial !important; table-layout: initial !important; text-align: initial !important; text-align-last: initial !important; text-anchor: initial !important; text-box: initial !important; text-combine-upright: initial !important; text-decoration: initial !important; text-decoration-skip-ink: initial !important; text-emphasis: initial !important; text-emphasis-position: initial !important; text-indent: initial !important; text-overflow: initial !important; text-shadow: initial !important; text-transform: initial !important; text-underline-offset: initial !important; text-underline-position: initial !important; text-wrap: initial !important; timeline-scope: initial !important; touch-action: initial !important; transform: initial !important; transform-box: initial !important; transform-origin: initial !important; transform-style: initial !important; transition: initial !important; translate: initial !important; user-select: initial !important; vector-effect: initial !important; vertical-align: initial !important; view-timeline: initial !important; view-transition-class: initial !important; view-transition-name: initial !important; visibility: initial !important; border-spacing: initial !important; -webkit-box-align: initial !important; -webkit-box-decoration-break: initial !important; -webkit-box-direction: initial !important; -webkit-box-flex: initial !important; -webkit-box-ordinal-group: initial !important; -webkit-box-orient: initial !important; -webkit-box-pack: initial !important; -webkit-box-reflect: initial !important; -webkit-line-break: initial !important; -webkit-line-clamp: initial !important; -webkit-mask-box-image: initial !important; -webkit-print-color-adjust: initial !important; -webkit-rtl-ordering: initial !important; -webkit-ruby-position: initial !important; -webkit-tap-highlight-color: initial !important; -webkit-text-combine: initial !important; -webkit-text-decorations-in-effect: initial !important; -webkit-text-fill-color: unset !important; -webkit-text-security: initial !important; -webkit-text-stroke: initial !important; -webkit-user-drag: initial !important; white-space-collapse: initial !important; widows: initial !important; width: initial !important; will-change: initial !important; word-break: initial !important; word-spacing: initial !important; x: initial !important; y: initial !important; z-index: initial !important;"><template shadowrootmode="open"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Symbols:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><link href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400,500,700" rel="stylesheet"><style>.ft-styless-button {border: none; background: none; user-select: none; cursor: pointer; border-radius: 16px;}.ft-container {position: fixed;}.ft-menu {position: absolute; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 4px 8px 3px rgba(60, 64, 67, 0.15), 0 1px 3px rgba(60, 64, 67, 0.3); min-height: 50px;}.ft-menu:not(.ft-multiple-buttons *) {transition: padding 0.25s 0.25s, margin 0.25s 0.25s, border-radius 0.25s 0.25s, background-color 0s 0.5s; padding: 0; margin: 5px; border-radius: 16px; background-color: rgba(255, 255, 255, 0);}.ft-multiple-buttons .ft-menu {transition: margin 0.25s, padding 0.25s, border-radius 0.25s 0.25s, background-color 0s; padding: 5px; margin: 0; border-radius: 21px; background-color: rgba(255, 255, 255, 1);}.ft-left-pos .ft-menu {left: 0;}.ft-right-pos .ft-menu {right: 0;}.ft-container.ft-hidden {transition: opacity 0.25s, visibility 0.5s 0s; opacity: 0; visibility: hidden;}.ft-container:not(.ft-hidden) {transition: opacity 0.25s, bottom 0.5s ease; opacity: 1;}.google-symbols {font-size: 26px; color: #3c4043;}.ft-button-holder {display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0;}.ft-flip-vertically {transform: scaleY(-1);}.ft-expand-toggle {width: 50px; height: 50px;}.ft-collapsed .ft-expand-icon {transition: transform 0.25s; transform: rotate(180deg);}.ft-expand-icon:not(.ft-collapsed *) {transition: transform 0.25s; transform: rotate(0deg);}.ft-button {position: relative; height: 50px; margin-bottom: 10px; transform: margin 0.25s 0.25s;}.ft-button.ft-last-button {margin-bottom: 0;}.ft-button > button {position: relative; height: 50px; width: 50px; margin: 0; padding: 0; border: none;}.ft-button > button > * {position: relative;}.ft-button .ft-highlighter {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 44px; width: 44px; border-radius: 25px; background-color: #d2e3fc; opacity: 0; transition: opacity 0.25s;}.ft-button.ft-highlighted .ft-highlighter {opacity: 1;}.ft-button-corner-info {display: none;}.ft-button.ft-show-corner-info .ft-button-corner-info {position: absolute; left: -5px; top: 4px; background: #b3261e; border: 1.5px solid #ffffff; box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15); border-radius: 100px; color: ffffff; font-family: 'Google Sans Text'; font-style: normal; font-weight: 700; font-size: 11px; line-height: 14px; min-width: 16px; height: 16px; display: flex; flex-direction: row; justify-content: center; align-items: center;}.ft-separator {display: block; width: 100%; height: 11px;}.ft-separator > span {display: block; width: 28px; margin: 0 auto 10px auto; height: 0; border-bottom: 1px solid #dadce0;}.ft-expand-toggle-container {height: 50px;}.ft-hidden {transition: opacity 0.25s, visibility 0.5s 0s; opacity: 0; visibility: hidden;}:not(.ft-hidden) {transition: opacity 0.25s; opacity: 1;}.ft-collapsed .ft-collapsible, .ft-collapsible.ft-collapsed, .ft-expand-toggle-container.ft-collapsed {transition: opacity 0.25s, margin 0.25s 0.25s, height 0.25s 0.25s, overflow 0.25s 0s, visibility 1s 0s; height: 0; opacity: 0; overflow: hidden; visibility: hidden; margin: 0;}.ft-collapsible:not(.ft-collapsed *):not(.ft-collapsed), .ft-expand-toggle-container:not(.ft-collapsed) {transition: margin 0.25s, height 0.25s, opacity 0.25s 0.25s; opacity: 1;}.ft-symbol-font-load-test {position: fixed; left: -1000px; top: -1000px; font-size: 26px; visibility: hidden;}.ft-reg-bubble {position: absolute; bottom: 0; padding: 10px 10px 0 10px; background: #fff; box-shadow: 0 4px 8px 3px rgba(60, 64, 67, 0.15), 0 1px 3px rgba(60, 64, 67, 0.3); border-radius: 16px; max-width: calc(90vw - 100px); width: 300px; height: 200px;}.ft-left-pos .ft-reg-bubble {left: 65px;}.ft-right-pos .ft-reg-bubble {right: 65px;}.ft-collapsed .ft-reg-bubble, .ft-reg-bubble.ft-collapsed {transition: width 0.25s ease-in 0.25s, height 0.25s ease-in 0.25s, opacity 0.05s linear 0.45s, overflow 0s 0.25s, visibility 0s 0.5s; width: 0; overflow: hidden; opacity: 0; visibility: hidden;}.ft-collapsed .ft-reg-bubble, .ft-reg-bubble.ft-no-messages {height: 0 !important;}.ft-reg-bubble:not(.ft-collapsed *):not(.ft-collapsed) {transition: width 0.25s ease-out, height 0.25s ease-out, opacity 0.05s linear;}.ft-reg-bubble-content {display: flex; flex-direction: row; max-width: calc(90vw - 100px); width: 300px;}.ft-collapsed .ft-reg-bubble-content {transition: opacity 0.25s; opacity: 0;}.ft-reg-bubble-content:not(.ft-collapsed *) {transition: opacity 0.25s 0.25s; opacity: 1;}.ft-reg-message-holder {flex-grow: 1; display: flex; flex-direction: column; height: auto;}.ft-reg-controls {flex-grow: 0; padding-left: 5px;}.ft-reg-bubble-close-icon {font-size: 16px;}.ft-reg-message {font-family: 'Google Sans Text'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 14px; padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid #dadce0;}.ft-reg-message:last-of-type {border-bottom: none;}.ft-reg-message-button {border: none; background: none; font-family: 'Google Sans Text'; color: #0b57d0; font-weight: 500; font-size: 14px; line-height: 22px; cursor: pointer; margin: 0; padding: 0; text-align: start;}.ft-display-none {display: none;}</style><toolbar id="ft-floating-toolbar" class="ft-container ft-left-pos" style="z-index: 2147483647; bottom: 50px; left: 10px;"><div class="ft-menu"><div class="ft-button-holder"></div><div class="ft-separator ft-collapsible ft-collapsed"><span></span></div><div class="ft-bottom-button-holder"><div class="ft-button ft-collapsible ft-reg-button ft-last-button ft-highlighted"><button class="ft-styless-button" aria-label="Toggle privacy and legal settings display" style="background-color: #fff"><span class="ft-highlighter"></span><span class="google-symbols" style="color: #3c4043" aria-hidden="true">verified_user</span></button><span class="ft-button-corner-info"></span></div></div><div class="ft-expand-toggle-container ft-collapsed"><button class="ft-expand-toggle ft-styless-button" aria-controls="ft-floating-toolbar" aria-label="Toggle toolbar expansion" aria-expanded="true"><span class="google-symbols ft-expand-icon" aria-hidden="true">expand_more</span></button></div></div><div id="ft-reg-bubble" class="ft-reg-bubble" style="height: 60px;"><div class="ft-reg-bubble-content"><div class="ft-reg-message-holder"><div class="ft-reg-message"><button class="ft-reg-message-button">Privacy and cookie settings</button><div class="ft-reg-message-info">Managed by Google. Complies with IAB TCF. CMP ID: 300</div></div></div><div class="ft-reg-controls"><button class="ft-reg-bubble-close ft-styless-button" aria-controls="ft-reg-bubble" aria-label="Dismiss privacy and legal settings display"><span class="google-symbols ft-reg-bubble-close-icon" aria-hidden="true">close</span></button></div></div></div></toolbar></template></div></body><iframe id="google_esf" name="google_esf" src="./UnZip &amp; Viewer Online_files/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>
